@@ -9,80 +9,139 @@
 
 /* ---- Type -------------------------------------------------------------- */
 :root {
-  --sl-font: 'Geist Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --sl-font-mono: 'Geist Mono Variable', ui-monospace, 'SF Mono', 'JetBrains Mono', monospace;
+  --sl-font: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --sl-font-mono: 'JetBrains Mono Variable', ui-monospace, 'SF Mono', monospace;
+  /* Display face for headings, brand, and hero — matches tcgt.help. */
+  --tcg-display: 'Space Grotesk Variable', 'Inter Variable', system-ui, sans-serif;
 
-  /* Tighten the docs measure a touch — reads more like Stripe/Vercel docs. */
   --sl-content-width: 48rem;
-  --sl-line-height: 1.7;
-  --sl-nav-height: 3.75rem;
+  --sl-nav-height: 3.5rem;               /* 52px topbar, matching the source */
 
-  /* One brand curve for radii, echoing the redesign's rounded controls. */
-  --tcg-radius: 0.625rem;
-  --tcg-radius-sm: 0.4rem;
+  /* Radii, matched to the source: cards 13px, controls 7px. */
+  --tcg-radius: 13px;
+  --tcg-radius-sm: 7px;
 
-  /* Named semantic tones (success / warn / danger) from the redesign. */
-  --tcg-success: oklch(0.72 0.15 155);
-  --tcg-warn: oklch(0.80 0.14 85);
-  --tcg-danger: oklch(0.65 0.19 25);
+  /* Shared easing curve from tcgt.help. */
+  --tcg-ease: cubic-bezier(.16, 1, .3, 1);
 }
 
-/* ---- Dark (default) ---------------------------------------------------- */
+/* ---- Dark (default) — exact tokens from tcgt.help shared/style.css ------ */
 :root {
-  /* Accent ramp — the #4f8ef7 blue, expressed in OKLCH. */
-  --sl-color-accent-low: oklch(0.30 0.07 256);
-  --sl-color-accent: oklch(0.62 0.16 256);
-  --sl-color-accent-high: oklch(0.84 0.09 256);
+  /* Surfaces & borders */
+  --tcg-bg: oklch(15% 0.006 264);
+  --tcg-bg-elevated: oklch(17.5% 0.007 264);
+  --tcg-surface: oklch(19.5% 0.008 264);
+  --tcg-surface-hover: oklch(23% 0.009 264);
+  --tcg-border: oklch(28% 0.01 264 / 0.55);
+  --tcg-border-soft: oklch(28% 0.01 264 / 0.28);
 
-  /* Text ramp. */
-  --sl-color-white: oklch(0.97 0.004 260);   /* headings / high-contrast */
-  --sl-color-gray-1: oklch(0.90 0.006 260);
-  --sl-color-gray-2: oklch(0.80 0.008 260);  /* body text */
-  --sl-color-gray-3: oklch(0.66 0.010 260);  /* muted */
-  --sl-color-gray-4: oklch(0.48 0.012 262);
-  --sl-color-gray-5: oklch(0.36 0.013 262);  /* borders */
-  --sl-color-gray-6: oklch(0.27 0.013 263);  /* elevated surfaces */
-  --sl-color-black: oklch(0.17 0.012 264);   /* page canvas */
+  /* Accent + multi-hue set */
+  --tcg-accent: oklch(68% 0.16 255);
+  --tcg-accent-dim: oklch(68% 0.16 255 / 0.14);
+  --tcg-accent-line: oklch(68% 0.16 255 / 0.35);
+  --tcg-blue: oklch(68% 0.16 255);
+  --tcg-teal: oklch(75% 0.11 190);
+  --tcg-teal-dim: oklch(75% 0.11 190 / 0.14);
+  --tcg-violet: oklch(70% 0.14 300);
+  --tcg-violet-dim: oklch(70% 0.14 300 / 0.14);
+  --tcg-success: oklch(72% 0.15 155);
+  --tcg-success-dim: oklch(72% 0.15 155 / 0.14);
+  --tcg-warn: oklch(78% 0.14 80);
+  --tcg-warn-dim: oklch(78% 0.14 80 / 0.14);
+  --tcg-danger: oklch(66% 0.19 25);
 
-  /* Elevation surfaces built off #1a1d23. */
-  --sl-color-bg: oklch(0.17 0.012 264);          /* ~#14161b canvas */
-  --sl-color-bg-nav: oklch(0.185 0.012 264);     /* command bar */
-  --sl-color-bg-sidebar: oklch(0.185 0.012 264);
-  --sl-color-bg-inline-code: oklch(0.24 0.014 264);
-  --sl-color-hairline-shade: oklch(0.27 0.013 263);
-  --sl-color-hairline: color-mix(in oklch, var(--sl-color-gray-5) 55%, transparent);
+  /* Map Starlight's variables onto the tokens above. */
+  --sl-color-accent-low: var(--tcg-accent-dim);
+  --sl-color-accent: var(--tcg-accent);
+  --sl-color-accent-high: oklch(82% 0.10 255);
+
+  --sl-color-white: oklch(93% 0.004 264);   /* text / headings */
+  --sl-color-gray-1: oklch(86% 0.006 264);
+  --sl-color-gray-2: oklch(68% 0.012 264);  /* body (text-dim) */
+  --sl-color-gray-3: oklch(58% 0.012 264);
+  --sl-color-gray-4: oklch(48% 0.012 264);  /* muted (text-faint) */
+  --sl-color-gray-5: oklch(35% 0.010 264);  /* borders */
+  --sl-color-gray-6: var(--tcg-surface);    /* elevated surfaces */
+  --sl-color-black: var(--tcg-bg);
+
+  --sl-color-bg: var(--tcg-bg);
+  --sl-color-bg-nav: oklch(16% 0.006 264 / 0.85);
+  --sl-color-bg-sidebar: var(--tcg-bg);
+  --sl-color-bg-inline-code: var(--tcg-surface-hover);
+  --sl-color-hairline-shade: var(--tcg-border);
+  --sl-color-hairline: var(--tcg-border-soft);
 
   --sl-color-text-accent: var(--sl-color-accent-high);
-  --sl-color-text-invert: var(--sl-color-black);
+  --sl-color-text-invert: oklch(15% 0 0);
 
-  --tcg-glow: 0 0 0 1px color-mix(in oklch, var(--sl-color-accent) 40%, transparent),
-              0 8px 30px -12px color-mix(in oklch, var(--sl-color-accent) 55%, transparent);
+  --tcg-glow: 0 0 0 1px color-mix(in oklch, var(--sl-color-accent) 38%, transparent),
+              0 10px 30px -12px color-mix(in oklch, var(--sl-color-accent) 45%, transparent);
 }
 
-/* ---- Light ------------------------------------------------------------- */
+/* ---- Light — exact tokens from tcgt.help -------------------------------- */
 :root[data-theme='light'] {
-  --sl-color-accent-low: oklch(0.90 0.05 256);
-  --sl-color-accent: oklch(0.55 0.17 256);
-  --sl-color-accent-high: oklch(0.40 0.14 256);
+  --tcg-bg: oklch(97.5% 0.004 264);
+  --tcg-bg-elevated: oklch(100% 0 0);
+  --tcg-surface: oklch(99.2% 0.002 264);
+  --tcg-surface-hover: oklch(95% 0.006 264);
+  --tcg-border: oklch(84% 0.012 264 / 0.9);
+  --tcg-border-soft: oklch(88% 0.01 264 / 0.7);
 
-  --sl-color-white: oklch(0.22 0.012 264);       /* headings (dark on light) */
-  --sl-color-gray-1: oklch(0.28 0.010 264);
-  --sl-color-gray-2: oklch(0.38 0.010 264);      /* body */
-  --sl-color-gray-3: oklch(0.52 0.010 264);      /* muted */
-  --sl-color-gray-4: oklch(0.66 0.010 262);
-  --sl-color-gray-5: oklch(0.80 0.008 262);      /* borders */
-  --sl-color-gray-6: oklch(0.94 0.005 262);      /* elevated surfaces */
-  --sl-color-gray-7: oklch(0.97 0.004 262);
-  --sl-color-black: oklch(1 0 0);
+  --tcg-accent: oklch(56% 0.19 258);
+  --tcg-accent-dim: oklch(56% 0.19 258 / 0.10);
+  --tcg-accent-line: oklch(56% 0.19 258 / 0.32);
+  --tcg-blue: oklch(56% 0.19 258);
+  --tcg-teal: oklch(50% 0.11 190);
+  --tcg-teal-dim: oklch(50% 0.11 190 / 0.10);
+  --tcg-violet: oklch(53% 0.17 300);
+  --tcg-violet-dim: oklch(53% 0.17 300 / 0.10);
+  --tcg-success: oklch(52% 0.15 155);
+  --tcg-success-dim: oklch(52% 0.15 155 / 0.10);
+  --tcg-warn: oklch(58% 0.16 75);
+  --tcg-warn-dim: oklch(58% 0.16 75 / 0.10);
+  --tcg-danger: oklch(55% 0.20 25);
 
-  --sl-color-bg: oklch(0.99 0.003 260);
-  --sl-color-bg-nav: oklch(0.985 0.004 260);
-  --sl-color-bg-sidebar: oklch(0.975 0.004 260);
-  --sl-color-bg-inline-code: oklch(0.95 0.006 260);
-  --sl-color-hairline-shade: oklch(0.90 0.006 260);
+  --sl-color-accent-low: var(--tcg-accent-dim);
+  --sl-color-accent: var(--tcg-accent);
+  --sl-color-accent-high: oklch(46% 0.16 258);
 
-  --tcg-glow: 0 0 0 1px color-mix(in oklch, var(--sl-color-accent) 30%, transparent),
-              0 8px 30px -14px color-mix(in oklch, var(--sl-color-accent) 40%, transparent);
+  --sl-color-white: oklch(23% 0.012 264);
+  --sl-color-gray-1: oklch(30% 0.012 264);
+  --sl-color-gray-2: oklch(42% 0.014 264);
+  --sl-color-gray-3: oklch(50% 0.013 264);
+  --sl-color-gray-4: oklch(58% 0.012 264);
+  --sl-color-gray-5: oklch(84% 0.012 264);
+  --sl-color-gray-6: var(--tcg-surface);
+  --sl-color-gray-7: oklch(99% 0.002 264);
+  --sl-color-black: oklch(100% 0 0);
+
+  --sl-color-bg: var(--tcg-bg);
+  --sl-color-bg-nav: oklch(98% 0.003 264 / 0.85);
+  --sl-color-bg-sidebar: var(--tcg-bg);
+  --sl-color-bg-inline-code: var(--tcg-surface-hover);
+  --sl-color-hairline-shade: var(--tcg-border);
+  --sl-color-hairline: var(--tcg-border-soft);
+
+  --sl-color-text-invert: oklch(100% 0 0);
+
+  --tcg-glow: 0 0 0 1px color-mix(in oklch, var(--sl-color-accent) 25%, transparent),
+              0 10px 30px -14px color-mix(in oklch, var(--sl-color-accent) 30%, transparent);
+}
+
+/* ---- Ambient body glow (accent top-left, violet top-right) ------------- */
+body {
+  background:
+    radial-gradient(ellipse 900px 500px at 15% -10%, oklch(68% 0.16 255 / 0.10), transparent 60%),
+    radial-gradient(ellipse 700px 400px at 100% 0%, oklch(70% 0.14 300 / 0.06), transparent 55%),
+    var(--sl-color-bg);
+  background-attachment: fixed;
+}
+:root[data-theme='light'] body {
+  background:
+    radial-gradient(ellipse 900px 500px at 15% -10%, oklch(68% 0.16 255 / 0.05), transparent 60%),
+    radial-gradient(ellipse 700px 400px at 100% 0%, oklch(70% 0.14 300 / 0.035), transparent 55%),
+    var(--sl-color-bg);
+  background-attachment: fixed;
 }
 
 /* ---- Command bar (top nav) --------------------------------------------- */
@@ -95,8 +154,17 @@
 
 /* Make the site title feel like a mark, not just text. */
 .site-title {
-  font-weight: 640;
+  font-family: var(--tcg-display);
+  font-weight: 600;
   letter-spacing: -0.01em;
+}
+
+/* Headings ride the display face, like the help center. */
+.sl-markdown-content :is(h1, h2, h3, h4),
+.hero h1,
+.tcg-home :is(h1, h2, h3) {
+  font-family: var(--tcg-display);
+  font-weight: 600;
 }
 
 /* ---- Search → command palette trigger ---------------------------------- */
@@ -244,4 +312,153 @@ starlight-theme-select select,
 /* ---- Respect reduced motion -------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; }
+}
+
+/* ========================================================================
+   HOME PAGE — echoes the tcgt.help help-center layout
+   (hero eyebrow + stat strip + bento cards + numbered guide list + Discord)
+   Scoped under .tcg-home so none of this touches the docs pages.
+   ======================================================================== */
+.tcg-home { max-width: 60rem; margin-inline: auto; }
+
+/* Hero */
+.tcg-hero { padding: 1rem 0 2.5rem; }
+.tcg-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em;
+  color: var(--sl-color-accent-high);
+  background: var(--sl-color-accent-low);
+  border: 1px solid var(--tcg-accent-line);
+  padding: 0.35rem 0.75rem; border-radius: 999px; margin-bottom: 1.1rem;
+}
+.tcg-eyebrow svg { width: 15px; height: 15px; }
+.tcg-hero h1 {
+  font-family: var(--tcg-display); font-weight: 600;
+  font-size: clamp(2rem, 4vw + 1rem, 3.1rem); line-height: 1.08;
+  letter-spacing: -0.03em; margin: 0 0 0.8rem;
+}
+.tcg-hero p.tcg-sub {
+  font-size: 1.1rem; color: var(--sl-color-gray-2);
+  max-width: 40rem; margin: 0 0 1.5rem;
+}
+/* Stat strip */
+.tcg-stats { display: flex; flex-wrap: wrap; gap: 2.2rem; margin-top: 1.8rem; }
+.tcg-stat b {
+  display: block; font-family: var(--tcg-display); font-weight: 600;
+  font-size: 1.7rem; letter-spacing: -0.02em; color: var(--sl-color-white);
+}
+.tcg-stat span { font-size: 0.85rem; color: var(--sl-color-gray-3); }
+
+/* Section head */
+.tcg-sec-head { margin: 2.5rem 0 1.1rem; }
+.tcg-sec-head h2 {
+  font-family: var(--tcg-display); font-weight: 600; font-size: 1.35rem;
+  letter-spacing: -0.02em; margin: 0; border: 0; padding: 0;
+}
+
+/* Bento card grid */
+.tcg-bento {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+}
+.tcg-bento .tcg-card { grid-column: span 1; }
+.tcg-bento .span-2 { grid-column: span 2; }
+.tcg-bento .span-3 { grid-column: span 3; }
+.tcg-card {
+  display: block; padding: 1.25rem; border-radius: var(--tcg-radius);
+  border: 1px solid var(--tcg-border-soft);
+  background: var(--tcg-surface);
+  transition: border-color 0.18s var(--tcg-ease), background 0.18s var(--tcg-ease), transform 0.18s var(--tcg-ease);
+  text-decoration: none; color: inherit;
+}
+.tcg-card:hover {
+  border-color: var(--tcg-border);
+  background: var(--tcg-surface-hover);
+  transform: translateY(-2px);
+}
+.tcg-card h3 {
+  font-family: var(--tcg-display); font-weight: 600; font-size: 1rem;
+  margin: 0.85rem 0 0.35rem; letter-spacing: -0.01em;
+}
+.tcg-card p { font-size: 0.86rem; color: var(--sl-color-gray-2); margin: 0; line-height: 1.5; }
+.tcg-ic {
+  width: 34px; height: 34px; border-radius: 9px;
+  display: grid; place-items: center;
+}
+.tcg-ic svg { width: 17px; height: 17px; }
+.ic-blue    { background: var(--tcg-accent-dim);  color: var(--tcg-accent); }
+.ic-teal    { background: var(--tcg-teal-dim);    color: var(--tcg-teal); }
+.ic-success { background: var(--tcg-success-dim); color: var(--tcg-success); }
+.ic-violet  { background: var(--tcg-violet-dim);  color: var(--tcg-violet); }
+.ic-warn    { background: var(--tcg-warn-dim);    color: var(--tcg-warn); }
+.tcg-mini { margin-top: 1rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.tcg-mini span {
+  display: flex; align-items: center; gap: 0.5rem; font-size: 0.88rem;
+  color: var(--sl-color-gray-2);
+}
+.tcg-mini span svg { width: 15px; height: 15px; flex: none; color: var(--sl-color-accent); }
+/* Safety net: no stray SVG in the home layout should ever balloon. */
+.tcg-home svg { flex: none; }
+.tcg-badge {
+  display: inline-block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.04em;
+  text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 999px;
+  background: color-mix(in oklch, var(--tcg-warn) 20%, transparent); color: var(--tcg-warn);
+  margin-top: 0.7rem;
+}
+
+/* Numbered "most read" guide list */
+.tcg-guides { display: flex; flex-direction: column; gap: 0.5rem; }
+.tcg-grow {
+  display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.1rem;
+  border: 1px solid var(--tcg-border-soft); border-radius: var(--tcg-radius);
+  background: var(--tcg-surface); text-decoration: none; color: inherit;
+  transition: border-color 0.15s var(--tcg-ease), background 0.15s var(--tcg-ease);
+}
+.tcg-grow:hover {
+  border-color: var(--tcg-border);
+  background: var(--tcg-surface-hover);
+}
+.tcg-gnum {
+  font-family: var(--tcg-display); font-weight: 600; font-size: 0.95rem;
+  color: var(--sl-color-gray-4); min-width: 1.5rem;
+}
+.tcg-grow .gt { font-weight: 550; font-size: 0.95rem; }
+.tcg-grow .gd { font-size: 0.83rem; color: var(--sl-color-gray-3); margin-top: 0.1rem; }
+.tcg-grow .grow-body { flex: 1; }
+.tcg-gtag {
+  font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.5rem; border-radius: 999px;
+  background: oklch(28% 0.008 264 / 0.6);
+  color: var(--sl-color-gray-2);
+}
+.tcg-gtag.hot { background: var(--tcg-success-dim); color: var(--tcg-success); }
+.tcg-grow .chev { width: 17px; height: 17px; color: var(--sl-color-gray-4); }
+
+/* Community / Discord strip */
+.tcg-community {
+  display: flex; align-items: center; gap: 1.1rem; margin-top: 2.5rem;
+  padding: 1.4rem 1.6rem; border-radius: var(--tcg-radius);
+  border: 1px solid var(--tcg-border-soft);
+  background: linear-gradient(120deg, var(--tcg-violet-dim), var(--tcg-accent-dim));
+}
+.tcg-community .cc-ic {
+  width: 44px; height: 44px; border-radius: 11px; display: grid; place-items: center;
+  background: oklch(20% 0.008 264); color: var(--tcg-violet);
+}
+.tcg-community .cc-ic svg { width: 22px; height: 22px; }
+.tcg-community h4 { font-family: var(--tcg-display); font-weight: 600; margin: 0; font-size: 1rem; }
+.tcg-community p { margin: 0.15rem 0 0; font-size: 0.88rem; color: var(--sl-color-gray-3); }
+.tcg-community .cc-spacer { flex: 1; }
+.tcg-cta {
+  display: inline-flex; align-items: center; gap: 0.5rem; white-space: nowrap;
+  font-weight: 600; font-size: 0.9rem; padding: 0.6rem 1rem; border-radius: var(--tcg-radius);
+  background: linear-gradient(155deg, oklch(70% 0.17 255), oklch(62% 0.17 258));
+  color: oklch(15% 0 0); text-decoration: none;
+  box-shadow: 0 1px 0 oklch(100% 0 0 / .25) inset, 0 6px 16px oklch(68% 0.16 255 / .28);
+  transition: filter 0.15s var(--tcg-ease), transform 0.12s var(--tcg-ease);
+}
+.tcg-cta:hover { filter: brightness(1.06); transform: translateY(-1px); }
+
+@media (max-width: 50rem) {
+  .tcg-bento { grid-template-columns: 1fr; }
+  .tcg-bento .span-2, .tcg-bento .span-3 { grid-column: span 1; }
+  .tcg-community { flex-wrap: wrap; }
 }

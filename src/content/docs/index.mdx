@@ -1,38 +1,126 @@
 ---
-title: TCGTracking
-description: Guides and documentation for the TCG shipping, tracking, and order-management toolkit.
+title: TCGTracking Help Center
+description: Guides, FAQs, and documentation for TCGTracking — free shipping and order management for TCG sellers.
 template: splash
-hero:
-  tagline: The free toolkit for printing, tracking, and managing TCG orders — documented.
-  actions:
-    - text: Get Started
-      link: /getting-started/overview/
-      icon: right-arrow
-      variant: primary
-    - text: Join the Discord
-      link: https://discord.gg/your-invite
-      icon: external
-      variant: minimal
+# Hide the auto-rendered page title on this page only — the hero has its own headline.
+head:
+  - tag: style
+    content: '.content-panel:has(> .sl-container > #_top){display:none;}'
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+<div class="tcg-home not-content">
 
-## Quick links
+<div class="tcg-hero">
+  <span class="tcg-eyebrow">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+    Community help center
+  </span>
+  <h1>Everything you need to run orders on TCGTracking.</h1>
+  <p class="tcg-sub">Guides for order management, shipping, insurance, and store integrations — written by sellers, for sellers.</p>
+  <div class="tcg-stats">
+    <div class="tcg-stat"><b>3,500+</b><span>sellers using TCGTracking</span></div>
+    <div class="tcg-stat"><b>1M+</b><span>labels processed</span></div>
+    <div class="tcg-stat"><b>14</b><span>guides published</span></div>
+  </div>
+</div>
 
-<CardGrid stagger>
-  <Card title="Getting Started" icon="rocket">
-    New here? Start with the [overview](/getting-started/overview/) and
-    [installation](/getting-started/installation/).
-  </Card>
-  <Card title="Printing & Shipping" icon="document">
-    Labels, [IMB tracking](/imb-tracking/), [PIP insurance](/pip-insurance/),
-    and [EasyPost](/easypost/).
-  </Card>
-  <Card title="Order Management" icon="list-format">
-    [Import](/order-management/importing-orders/) and
-    [split](/order-management/splitting-orders/) orders from your marketplaces.
-  </Card>
-  <Card title="The Bridge" icon="puzzle">
-    Connect your tools with the [TCGTracking Bridge](/bridge/).
-  </Card>
-</CardGrid>
+<div class="tcg-sec-head"><h2>Browse by topic</h2></div>
+
+<div class="tcg-bento">
+
+  <a class="tcg-card span-2" href="/order-management/importing-orders/">
+    <div class="tcg-ic ic-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div>
+    <h3>Order Management</h3>
+    <p>Import, split, and process orders from every marketplace you sell on.</p>
+    <div class="tcg-mini">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Importing Orders</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Splitting Orders</span>
+    </div>
+  </a>
+
+  <a class="tcg-card" href="/imb-tracking/">
+    <div class="tcg-ic ic-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+    <h3>IMB Tracking</h3>
+    <p>Buyer-facing package tracking, end to end.</p>
+  </a>
+
+  <a class="tcg-card" href="/pip-insurance/">
+    <div class="tcg-ic ic-success"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6l8-4z"/></svg></div>
+    <h3>PIP Insurance</h3>
+    <p>When it's worth it and how claims work.</p>
+  </a>
+
+  <a class="tcg-card" href="/bridge/">
+    <div class="tcg-ic ic-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12a8 8 0 0116 0M6 12v4a2 2 0 002 2h1M18 12v4a2 2 0 01-2 2h-1"/></svg></div>
+    <h3>TCGTracking Bridge</h3>
+    <p>Sync inventory across storefronts in real time.</p>
+  </a>
+
+  <a class="tcg-card span-2" href="/stores/">
+    <div class="tcg-ic ic-warn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M18 17V9M13 17V5M8 17v-3"/></svg></div>
+    <h3>Stores</h3>
+    <p>Turn your inventory into a standalone storefront. Guides land when the feature ships.</p>
+    <span class="tcg-badge">Coming Soon</span>
+  </a>
+
+</div>
+
+<div class="tcg-sec-head"><h2>Most read this month</h2></div>
+
+<div class="tcg-guides">
+
+  <a class="tcg-grow" href="/order-management/importing-orders/">
+    <span class="tcg-gnum">01</span>
+    <div class="grow-body">
+      <div class="gt">How do I import orders from TCGplayer?</div>
+      <div class="gd">API sync or CSV export — both ways to pull orders in.</div>
+    </div>
+    <span class="tcg-gtag">Orders</span>
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </a>
+
+  <a class="tcg-grow" href="/printing-shipping/">
+    <span class="tcg-gnum">02</span>
+    <div class="grow-body">
+      <div class="gt">How do I print a trackable envelope?</div>
+      <div class="gd">Free USPS tracking on any home printer, no postage required.</div>
+    </div>
+    <span class="tcg-gtag hot">Popular</span>
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </a>
+
+  <a class="tcg-grow" href="/pip-insurance/">
+    <span class="tcg-gnum">03</span>
+    <div class="grow-body">
+      <div class="gt">What is PIP insurance and how does it work?</div>
+      <div class="gd">Coverage up to $50 per shipment, billed only when you use it.</div>
+    </div>
+    <span class="tcg-gtag">Insurance</span>
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </a>
+
+  <a class="tcg-grow" href="/getting-started/installation/">
+    <span class="tcg-gnum">04</span>
+    <div class="grow-body">
+      <div class="gt">Getting started with TCGTracking</div>
+      <div class="gd">Set up your account, connect a carrier, print your first label.</div>
+    </div>
+    <span class="tcg-gtag hot">New</span>
+    <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+  </a>
+
+</div>
+
+<div class="tcg-community">
+  <div class="cc-ic">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 12a1 1 0 100-2 1 1 0 000 2zM16 12a1 1 0 100-2 1 1 0 000 2z"/><path d="M6 8s1.5-2 6-2 6 2 6 2 2 3 2 8c-1.2 1-3 2-3 2l-1-1.5s-1.5.5-4 .5-4-.5-4-.5L7 18s-1.8-1-3-2c0-5 2-8 2-8z"/></svg>
+  </div>
+  <div>
+    <h4>Can't find what you're looking for?</h4>
+    <p>The Discord community answers questions live, most days.</p>
+  </div>
+  <div class="cc-spacer"></div>
+  <a class="tcg-cta" href="https://discord.com/invite/CcZAuw22Q9">Join the Discord</a>
+</div>
+
+</div>

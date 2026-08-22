@@ -8,14 +8,21 @@ export default defineConfig({
   site: 'https://tcgt.help',
   integrations: [
     starlight({
-      title: 'TCGTracking',
+      title: 'TCGT.help',
+      // Boxed "T" brand mark shown in the header, matching the help-center design.
+      logo: {
+        src: './src/assets/tcgt-mark.svg',
+        alt: 'TCGT.help',
+      },
       // Short tagline shown under the title in the sidebar on desktop.
       tagline: 'Guides & docs for the TCG shipping toolkit',
       // Bundled fonts (installed via npm) + the theme are loaded here.
       // Order matters: fonts first, theme last so it wins.
+      // Space Grotesk (display) + Inter (body) + JetBrains Mono (code) — matches tcgt.help.
       customCss: [
-        '@fontsource-variable/geist',
-        '@fontsource-variable/geist-mono',
+        '@fontsource-variable/space-grotesk',
+        '@fontsource-variable/inter',
+        '@fontsource-variable/jetbrains-mono',
         './src/styles/tcgt.css',
       ],
       // Starlight ships a ⌘K command palette (Pagefind) out of the box.
