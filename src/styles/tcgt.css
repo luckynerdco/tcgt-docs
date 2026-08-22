@@ -462,3 +462,54 @@ starlight-theme-select select,
   .tcg-bento .span-2, .tcg-bento .span-3 { grid-column: span 1; }
   .tcg-community { flex-wrap: wrap; }
 }
+
+/* ========================================================================
+   TOP NAV (SiteTitle override) — horizontal links in the header
+   ======================================================================== */
+.tcg-brandnav { display: flex; align-items: center; gap: 1.25rem; min-width: 0; }
+.top-nav { display: none; align-items: center; gap: 2px; }
+.top-nav a {
+  padding: 7px 12px; border-radius: 6px; font-size: 0.82rem; font-weight: 500;
+  color: var(--sl-color-gray-2); white-space: nowrap; text-decoration: none;
+  transition: color .15s var(--tcg-ease), background .15s var(--tcg-ease);
+}
+.top-nav a:hover { color: var(--sl-color-white); background: var(--tcg-surface-hover); }
+.top-nav a.active { color: var(--sl-color-white); background: var(--tcg-surface); }
+/* Only show the top nav where there's room; the sidebar covers mobile. */
+@media (min-width: 72rem) { .top-nav { display: flex; } }
+
+/* ========================================================================
+   UNIFORM CARD SECTIONS — small equal cards, grouped by section
+   ======================================================================== */
+.tcg-section { margin-top: 2.25rem; }
+/* A soft divider between sections for clear separation. */
+.tcg-section + .tcg-section { padding-top: 2.25rem; border-top: 1px solid var(--tcg-border-soft); }
+
+.tcg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
+  gap: 0.85rem;
+}
+.tcg-scard {
+  display: flex; flex-direction: column; gap: 0.3rem;
+  padding: 1.15rem 1.2rem; border-radius: var(--tcg-radius);
+  background: var(--tcg-surface); border: 1px solid var(--tcg-border-soft);
+  text-decoration: none; color: inherit;
+  transition: border-color .16s var(--tcg-ease), background .16s var(--tcg-ease), transform .16s var(--tcg-ease);
+}
+.tcg-scard:hover {
+  border-color: var(--tcg-border); background: var(--tcg-surface-hover);
+  transform: translateY(-2px);
+}
+.tcg-emoji { font-size: 1.4rem; line-height: 1; margin-bottom: 0.5rem; }
+.tcg-scard b {
+  font-family: var(--tcg-display); font-weight: 600; font-size: 0.95rem;
+  letter-spacing: -0.01em; color: var(--sl-color-white);
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.tcg-scard .tcg-sd { font-size: 0.83rem; color: var(--sl-color-gray-2); line-height: 1.5; }
+.tcg-inline-badge {
+  font-size: 0.6rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 0.15rem 0.45rem; border-radius: 999px;
+  background: var(--tcg-warn-dim); color: var(--tcg-warn);
+}

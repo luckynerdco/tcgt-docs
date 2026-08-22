@@ -9,6 +9,10 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'TCGT.help',
+      // Custom header: default site title + a horizontal top nav.
+      components: {
+        SiteTitle: './src/components/SiteTitle.astro',
+      },
       // Boxed "T" brand mark shown in the header, matching the help-center design.
       logo: {
         src: './src/assets/tcgt-mark.svg',
