@@ -1,0 +1,9 @@
+---
+// Adds a site-wide independence disclaimer beneath Starlight's default footer.
+import Default from '@astrojs/starlight/components/Footer.astro';
+---
+<Default {...Astro.props}><slot /></Default>
+<div class="tcg-disclaimer">
+  TCGT.Help is an independent, community-run help site for users of TCGTracking.
+  It is not affiliated with, endorsed by, or operated by TCGTracking.
+</div>

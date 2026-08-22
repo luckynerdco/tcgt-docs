@@ -1,36 +1,33 @@
 ---
 title: Overview
-description: What TCGTracking is and how the docs are organized.
+description: What TCGT.Help is, and how these community guides are organized.
 ---
 
-TCGTracking (tcgt.help) is a free community toolkit for people shipping trading
-cards at volume — printing labels, tracking shipments, insuring packages, and
-keeping order management sane across marketplaces.
+Welcome to **TCGT.Help** — a community-run help site for sellers who use
+[TCGTracking](https://tcgtracking.com). It's written by users, for users.
 
-These docs are organized the same way you actually work: get set up, print and
-ship, then manage orders as they come in.
-
-:::tip[New here?]
-Head straight to [Installation](/getting-started/installation/) — you'll be
-tracking your first shipment in a few minutes.
+:::note[About this site]
+TCGT.Help is an independent, community resource. It is **not affiliated with,
+endorsed by, or operated by TCGTracking** — it's just sellers helping sellers
+get the most out of the platform.
 :::
 
-## The workflow at a glance
+## Getting started with TCGTracking
 
-1. **Set up** your account and connect a carrier.
-2. **Import** orders from TCGplayer, ManaPool, or eBay.
-3. **Print** labels with IMB tracking baked in.
-4. **Insure** high-value shipments with PIP.
-5. **Manage** everything from one dashboard.
+TCGTracking is **web-based** — there's nothing to download or install. You sign
+in through your browser and you're ready to go. These guides walk through the
+day-to-day workflows once you're in.
 
-## Sections
+## How the guides are organized
 
-- **Getting Started** — accounts, installation, first shipment.
-- **Printing & Shipping** — labels, IMB tracking, PIP insurance, EasyPost.
-- **Order Management** — importing and splitting orders.
-- **More** — the Bridge, locations, and Stores (coming soon).
+- **Getting Started** — you're reading it.
+- **Order Management** — importing orders, returns, cancelations, and assisted pick.
+- **Printing & Shipping** — printing, e-postage, tracking, insurance, and assisted pack.
+- **Inventory Management** — adding stock, locations, and auto-pricing.
+- **Utilities & More** — audits, purchasing opportunities, selling stats, employees, and APIs.
 
-:::note
-This is a community project. Found a gap in the docs? Open a pull request — every
-change gets reviewed before it goes live.
+:::tip[Want to help?]
+Most guides are still being written. If you know a workflow well, come share it
+in the [Discord](https://discord.com/invite/CcZAuw22Q9) — this site grows when
+users contribute.
 :::

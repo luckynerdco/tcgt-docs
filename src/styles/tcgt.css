@@ -513,3 +513,14 @@ starlight-theme-select select,
   padding: 0.15rem 0.45rem; border-radius: 999px;
   background: var(--tcg-warn-dim); color: var(--tcg-warn);
 }
+
+/* ---- Independence disclaimers ------------------------------------------ */
+.tcg-home-disclaimer {
+  margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--tcg-border-soft);
+  font-size: 0.78rem; color: var(--sl-color-gray-4); line-height: 1.55; max-width: 46rem;
+}
+.tcg-disclaimer {
+  max-width: 1120px; margin: 0 auto; padding: 16px 24px 32px;
+  font-size: 0.75rem; color: var(--sl-color-gray-4); line-height: 1.5;
+  border-top: 1px solid var(--tcg-border-soft);
+}

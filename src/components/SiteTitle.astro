@@ -1,28 +1,25 @@
 ---
 // Extends Starlight's default SiteTitle (logo + wordmark) with a horizontal
-// top-nav, matching the tcgt.help help-center header. Wrapping the default
-// keeps it forward-compatible across Starlight updates.
+// top-nav mapping to the five guide categories.
 import Default from '@astrojs/starlight/components/SiteTitle.astro';
 
 const nav = [
-  { label: 'Guides', href: '/' },
-  { label: 'Order Management', href: '/order-management/importing-orders/' },
-  { label: 'Inventory', href: '/managing-locations/' },
-  { label: 'Integrations', href: '/easypost/' },
-  { label: 'Utilities', href: '/bridge/' },
-  { label: 'FAQ', href: '/faq/' },
+  { label: 'Getting Started', href: '/getting-started/overview/', match: '/getting-started' },
+  { label: 'Order Management', href: '/order-management/importing-orders/', match: '/order-management' },
+  { label: 'Printing & Shipping', href: '/printing-shipping/printing/', match: '/printing-shipping' },
+  { label: 'Inventory', href: '/inventory-management/adding-stock/', match: '/inventory-management' },
+  { label: 'Utilities & More', href: '/utilities/audits/', match: '/utilities' },
 ];
 
 const current = Astro.url.pathname;
-const isActive = (href: string) =>
-  href === '/' ? current === '/' : current.startsWith(href);
+const isActive = (m: string) => current.startsWith(m);
 ---
 
 <div class="tcg-brandnav">
   <Default {...Astro.props}><slot /></Default>
   <nav class="top-nav" aria-label="Primary">
     {nav.map((i) => (
-      <a href={i.href} class={isActive(i.href) ? 'active' : ''}>{i.label}</a>
+      <a href={i.href} class={isActive(i.match) ? 'active' : ''}>{i.label}</a>
     ))}
   </nav>
 </div>

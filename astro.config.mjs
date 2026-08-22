@@ -9,9 +9,10 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'TCGT.help',
-      // Custom header: default site title + a horizontal top nav.
+      // Custom header + footer: top nav and an independence disclaimer.
       components: {
         SiteTitle: './src/components/SiteTitle.astro',
+        Footer: './src/components/Footer.astro',
       },
       // Boxed "T" brand mark shown in the header, matching the help-center design.
       logo: {
@@ -41,37 +42,56 @@ export default defineConfig({
       ],
       // Turn off the default "Built with Starlight" note; this is your site.
       credits: false,
-      // Sidebar mirrors the live tcgt.help information architecture.
+      // Sidebar mirrors the community guide structure.
       sidebar: [
         {
           label: 'Getting Started',
           items: [
             { label: 'Overview', slug: 'getting-started/overview' },
-            { label: 'Installation', slug: 'getting-started/installation' },
-          ],
-        },
-        {
-          label: 'Printing & Shipping',
-          items: [
-            { label: 'Printing & Shipping', slug: 'printing-shipping' },
-            { label: 'IMB Tracking', slug: 'imb-tracking' },
-            { label: 'PIP Insurance', slug: 'pip-insurance' },
-            { label: 'EasyPost Integration', slug: 'easypost' },
           ],
         },
         {
           label: 'Order Management',
           items: [
             { label: 'Importing Orders', slug: 'order-management/importing-orders' },
-            { label: 'Splitting Orders', slug: 'order-management/splitting-orders' },
+            { label: 'Returns', slug: 'order-management/returns' },
+            { label: 'Cancelations', slug: 'order-management/cancelations' },
+            { label: 'Assisted Pick', slug: 'order-management/assisted-pick' },
           ],
         },
         {
-          label: 'More',
+          label: 'Printing & Shipping',
           items: [
-            { label: 'TCGTracking Bridge', slug: 'bridge' },
-            { label: 'Managing Locations', slug: 'managing-locations' },
-            { label: 'Stores', slug: 'stores', badge: { text: 'Soon', variant: 'caution' } },
+            { label: 'Printing', slug: 'printing-shipping/printing' },
+            {
+              label: 'E-Postage',
+              items: [
+                { label: 'Overview', slug: 'printing-shipping/e-postage' },
+                { label: 'EasyPost Integration', slug: 'printing-shipping/easypost-integration' },
+              ],
+            },
+            { label: 'IMB Tracking', slug: 'printing-shipping/imb-tracking' },
+            { label: 'PIP Insurance', slug: 'printing-shipping/pip-insurance' },
+            { label: 'Assisted Pack', slug: 'printing-shipping/assisted-pack' },
+          ],
+        },
+        {
+          label: 'Inventory Management',
+          items: [
+            { label: 'Adding Stock', slug: 'inventory-management/adding-stock' },
+            { label: 'Locations', slug: 'inventory-management/locations' },
+            { label: 'Auto-Price', slug: 'inventory-management/auto-price' },
+          ],
+        },
+        {
+          label: 'Utilities & More',
+          items: [
+            { label: 'Audits', slug: 'utilities/audits' },
+            { label: 'Purchasing Opportunities', slug: 'utilities/purchasing-opportunities' },
+            { label: 'TCGTracking Utilities', slug: 'utilities/tcgtracking-utilities' },
+            { label: 'Selling Stats', slug: 'utilities/selling-stats' },
+            { label: 'Employees', slug: 'utilities/employees' },
+            { label: 'APIs', slug: 'utilities/apis' },
           ],
         },
       ],
