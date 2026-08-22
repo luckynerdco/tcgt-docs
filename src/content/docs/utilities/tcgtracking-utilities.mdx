@@ -1,10 +1,83 @@
 ---
 title: TCGTracking Utilities
-description: Community guide for TCGTracking users — TCGTracking Utilities.
+description: A Chrome extension that adds workflow shortcuts and quality-of-life tools to TCGTracking.
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import { Steps, Aside, Card, CardGrid } from '@astrojs/starlight/components';
 
-<Aside type="note" title="Coming soon">
-This guide hasn't been written yet. It's on the list — check back soon, or contribute one in the [Discord](https://discord.com/invite/CcZAuw22Q9).
+A Chrome extension that adds quality-of-life tools and workflow shortcuts on top of
+your TCGTracking dashboard.
+
+## Overview
+
+TCGTracking Utilities is a free Chrome extension built by **Kraken**, a member of the
+TCGTracking community, that layers extra tools and shortcuts directly onto your
+dashboard to speed up order management and fulfillment. It runs entirely in your
+browser alongside TCGTracking — no separate account or login required.
+
+<Aside type="tip">
+Built for sellers who process large order volumes and want faster, more accurate
+order handling.
 </Aside>
+
+<Aside type="note">
+This is a community-built tool, not an official TCGTracking product. It is listed
+here because it's widely used and trusted within the seller community, but it is
+developed and maintained independently.
+</Aside>
+
+## Features
+
+<CardGrid>
+  <Card title="Quick Marketplace Links">Open the matching marketplace order directly from TCGTracking in one click.</Card>
+  <Card title="PIP Claim Autofill">Automatically fills out PIP insurance claim forms to cut down on manual data entry.</Card>
+  <Card title="Duplicate Order Detection">Flags potential duplicate orders before you process and ship them.</Card>
+  <Card title="Custom Customer Flags">Flag orders automatically based on customer name, address, city, state, or ZIP code.</Card>
+  <Card title="Google Maps Integration">Open any shipping address in Google Maps for quick validation before you ship.</Card>
+  <Card title="Workflow Enhancements">Additional shortcuts and small utilities aimed at reducing errors and saving clicks.</Card>
+</CardGrid>
+
+## Installing the extension
+
+<Steps>
+
+1. **Open the Chrome Web Store listing**
+
+   Go to the [TCGTracking Utilities listing](https://chromewebstore.google.com/detail/tcgtracking-utilities/djllhfipchmehchmanpnpnjmahpfeafd).
+
+2. **Click Add to Chrome**
+
+   Confirm the permissions prompt to finish installing.
+
+3. **Pin the extension**
+
+   Click the puzzle-piece icon in your Chrome toolbar and pin TCGTracking Utilities for quick access.
+
+4. **Log into TCGTracking as normal**
+
+   The extension activates automatically on your TCGTracking dashboard — no separate setup needed.
+
+</Steps>
+
+<Aside type="caution">
+This extension only works in Chrome (and other Chromium-based browsers like Edge or
+Brave). It is not available for Firefox or Safari.
+</Aside>
+
+## Privacy
+
+The developer has disclosed that this extension does not collect or sell your data,
+and does not use your data for anything unrelated to the extension's core
+functionality.
+
+<CardGrid>
+  <Card title="Offered by">Kraken</Card>
+  <Card title="Size">1.55 MiB — lightweight, no bloat.</Card>
+</CardGrid>
+
+## Related: TCGTracking Bridge
+
+If you're also looking to sync inventory and orders directly from your TCGPlayer
+seller portal, check out the [TCGTracking Bridge extension](/utilities/tcgtracking-bridge/)
+— a separate Chrome extension focused on TCGPlayer syncing rather than in-dashboard
+workflow shortcuts.

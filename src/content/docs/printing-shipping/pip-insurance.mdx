@@ -1,10 +1,152 @@
 ---
 title: PIP Insurance
-description: Community guide for TCGTracking users — PIP Insurance.
+description: Protect your shipments with optional PIP coverage up to $50 per envelope.
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import { Steps, Aside, Card, CardGrid } from '@astrojs/starlight/components';
 
-<Aside type="note" title="Coming soon">
-This guide hasn't been written yet. It's on the list — check back soon, or contribute one in the [Discord](https://discord.com/invite/CcZAuw22Q9).
+Protect your shipments with optional coverage up to $50 per envelope.
+
+## What is PIP insurance?
+
+PIP stands for **Parcel Insurance Plan**. It is an optional shipment insurance
+service integrated directly into TCGTracking that covers your envelopes against
+loss or damage in transit.
+
+PIP insurance is one of the lowest-cost shipment insurance options available to
+non-marketplace sellers, and it is built directly into your workflow with no
+separate account or third-party service needed.
+
+<Aside type="tip">
+PIP insurance is completely optional. You are only charged when you choose to add it
+to a shipment. There are no monthly fees or minimums.
 </Aside>
+
+## Pricing
+
+PIP insurance rates depend on your account tier:
+
+<CardGrid>
+  <Card title="Free plan — $0.17 min">or 0.85% of declared value, whichever is greater.</Card>
+  <Card title="Beta Supporter — $0.13 min">or 0.70% of declared value, whichever is greater.</Card>
+</CardGrid>
+
+<Aside type="caution">
+Upgrading to the Beta Supporter plan at $9.99/month can pay for itself quickly if you
+insure a high volume of shipments.
+</Aside>
+
+### Coverage limits
+
+- Maximum coverage per shipment: **$50**
+- Coverage includes loss and damage in transit
+- You set the declared value when adding insurance to a shipment
+
+## How to use PIP insurance
+
+Adding PIP insurance to a shipment takes just one extra step during the printing
+process.
+
+<Steps>
+
+1. **Import your orders as normal using Quick Create**
+
+2. **When reviewing your orders before printing, find the Insurance column**
+
+3. **Enter the declared value of the shipment**
+
+4. **PIP insurance will be automatically added to that shipment**
+
+5. **The insurance cost will be charged to your account when you print**
+
+</Steps>
+
+<Aside type="danger" title="Declare the accurate value">
+Make sure the declared value accurately reflects the value of the cards inside the
+envelope. Overstating the value may result in a denied claim.
+</Aside>
+
+## Filing a claim
+
+If a package is lost or damaged in transit, you can file a PIP insurance claim
+directly through your TCGTracking dashboard.
+
+### What is eligible for PIP insurance?
+
+- **Lost package** — if your package has not been delivered and tracking shows no movement for an extended period.
+- **Damaged package** — if the recipient reports receiving a damaged shipment.
+
+### When can I file a claim?
+
+A claim may be filed 30 days after the first scan of a mailpiece. If a mailpiece is
+never scanned, you can manually attest that you have mailed the package, and must
+wait 30 days from the date of attestation.
+
+### How to file a claim
+
+<Steps>
+
+1. **Go to your TCGTracking dashboard and find the order**
+
+   In the [Shipments tab](https://tcgtracking.com/dashboard.php?tab=envelopes).
+
+2. **Search for the order**
+
+   Via tracking, order #, zip, or recipient name.
+
+3. **Click into the order to bring up details**
+
+4. **Click the Insurance tab**
+
+5. **Take note of the Policy Number and your tracking number**
+
+   Policy Number **18035** — you will need these to file.
+
+6. **Click File Claim**
+
+   Use the policy number and provide a screenshot of the invoice and notification of non-delivery.
+
+7. **Fill in the claim details**
+
+</Steps>
+
+<Aside type="tip">
+Use the radio buttons at the top of the shipment box — you can filter these later to
+find orders that need claims sent in. TCGTracking's built-in tracking data is
+automatically included with your claim, which speeds up the process significantly.
+</Aside>
+
+## Common questions
+
+<details>
+<summary>Does PIP insurance cover all my shipments automatically?</summary>
+
+No. PIP insurance is opt-in per shipment. You choose which orders to insure and enter
+the declared value manually during the printing process.
+
+</details>
+
+<details>
+<summary>Can I insure shipments over $50?</summary>
+
+No. The maximum coverage per shipment is $50. For higher-value shipments, consider
+using a carrier label with built-in insurance through EasyPost instead.
+
+</details>
+
+<details>
+<summary>How long does it take to process a claim?</summary>
+
+Claim processing times vary, but having your tracking data automatically included
+typically speeds things up. You will be notified via email when your claim is
+processed.
+
+</details>
+
+<details>
+<summary>Is PIP insurance available on the free plan?</summary>
+
+Yes. PIP insurance is available on both the free plan and the Beta Supporter plan.
+Beta Supporters get lower rates per shipment.
+
+</details>

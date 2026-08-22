@@ -1,27 +1,138 @@
 ---
 title: Importing Orders
-description: Pull orders in from TCGplayer, ManaPool, and eBay.
+description: Import orders from your marketplaces into TCGTracking.
 ---
 
-import { Steps } from '@astrojs/starlight/components';
+import { Steps, Aside, Card, CardGrid } from '@astrojs/starlight/components';
 
-TCGTracking pulls orders from your connected marketplaces so you can print and
-ship from one place instead of jumping between tabs.
+Learn how to import orders from your marketplaces into TCGTracking.
+
+## Overview
+
+TCGTracking supports importing orders from multiple marketplaces so you can manage
+all your shipments from one place. Orders can be imported automatically via API sync,
+by uploading a CSV export, or entered manually using Quick Create.
+
+<Aside type="note">
+Always verify your shipping addresses after importing. TCGTracking will automatically
+flag any addresses that may have issues.
+</Aside>
+
+## Importing from TCGPlayer
+
+TCGPlayer is the most common marketplace for TCG sellers and has the deepest
+integration with TCGTracking.
+
+### Via API sync
 
 <Steps>
 
-1. Go to **Orders → Import**.
+1. **Go to your TCGTracking dashboard and click Quick Create**
 
-2. Choose a source — **TCGplayer**, **ManaPool**, or **eBay**.
+2. **Select TCGPlayer as your import source**
 
-3. Pick a date range and click **Import**. New orders land in your **Open** queue.
+3. **Click Sync Orders to automatically pull in your latest orders**
+
+4. **Review the imported orders and click Process**
 
 </Steps>
 
-:::tip
-Imports are incremental — running the same import again only pulls orders you
-haven't seen yet, so it's safe to re-run whenever.
-:::
+<Aside type="tip">
+API sync pulls in all unfulfilled orders automatically. We recommend syncing before
+each shipping session.
+</Aside>
 
-Once orders are in, head to [Printing & Shipping](/printing-shipping/printing/)
-to print labels and get them out the door.
+### Via CSV export
+
+<Steps>
+
+1. **Log into your TCGPlayer seller account**
+
+2. **Go to Orders and export your orders as a CSV file**
+
+3. **In TCGTracking click Quick Create → TCGPlayer → Upload CSV**
+
+4. **Select your exported CSV file and click Import**
+
+</Steps>
+
+## Other marketplaces
+
+TCGTracking supports the following marketplaces in addition to TCGPlayer:
+
+<CardGrid>
+  <Card title="Manapool">Connect via API sync or CSV export.</Card>
+  <Card title="Cardsphere">Connect via API sync or CSV export.</Card>
+  <Card title="eBay">Connect via API sync or CSV export.</Card>
+  <Card title="Amazon">Import via CSV export.</Card>
+  <Card title="Shopify">Connect via API sync or CSV export.</Card>
+</CardGrid>
+
+To connect any of these marketplaces, go to **Settings → Integrations** in your
+TCGTracking dashboard.
+
+## CSV import
+
+If your marketplace is not directly supported, you can upload a CSV file manually.
+
+<Steps>
+
+1. **Click Quick Create on your dashboard**
+
+2. **Select CSV Upload**
+
+3. **Download the TCGTracking CSV template**
+
+   To make sure your file is formatted correctly.
+
+4. **Fill in your order data and save the file**
+
+5. **Upload the file and click Import**
+
+</Steps>
+
+<Aside type="note">
+Make sure your CSV file uses the correct column headers. TCGTracking will show an
+error if required columns are missing or misnamed.
+</Aside>
+
+## Manual order entry
+
+For individual orders, you can enter them manually using Quick Create.
+
+<Steps>
+
+1. **Click Quick Create on your dashboard**
+
+2. **Select Manual Entry**
+
+3. **Enter the recipient name, address, and order details**
+
+4. **Click Create Order**
+
+</Steps>
+
+<Aside type="tip">
+Manual entry is great for sending samples, gifts, or any shipment that does not come
+from a marketplace order.
+</Aside>
+
+## Batch processing
+
+TCGTracking supports batch processing of up to 100 orders at once.
+
+<Steps>
+
+1. **Import your orders using any of the methods above**
+
+2. **Select all the orders you want to process using the checkboxes**
+
+3. **Click Batch Print to generate a single PDF with all envelopes**
+
+4. **Print the PDF and ship all your orders at once**
+
+</Steps>
+
+<Aside type="tip">
+Many sellers import and batch print once or twice a day to save time.
+</Aside>

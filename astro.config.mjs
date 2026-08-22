@@ -54,6 +54,7 @@ export default defineConfig({
           label: 'Order Management',
           items: [
             { label: 'Importing Orders', slug: 'order-management/importing-orders' },
+            { label: 'Splitting Orders', slug: 'order-management/splitting-orders' },
             { label: 'Returns', slug: 'order-management/returns' },
             { label: 'Cancelations', slug: 'order-management/cancelations' },
             { label: 'Assisted Pick', slug: 'order-management/assisted-pick' },
@@ -78,6 +79,7 @@ export default defineConfig({
         {
           label: 'Inventory Management',
           items: [
+            { label: 'Overview', slug: 'inventory-management/overview' },
             { label: 'Adding Stock', slug: 'inventory-management/adding-stock' },
             { label: 'Locations', slug: 'inventory-management/locations' },
             { label: 'Auto-Price', slug: 'inventory-management/auto-price' },
@@ -89,11 +91,20 @@ export default defineConfig({
             { label: 'Audits', slug: 'utilities/audits' },
             { label: 'Purchasing Opportunities', slug: 'utilities/purchasing-opportunities' },
             { label: 'TCGTracking Utilities', slug: 'utilities/tcgtracking-utilities' },
+            { label: 'TCGTracking Bridge', slug: 'utilities/tcgtracking-bridge' },
             { label: 'Selling Stats', slug: 'utilities/selling-stats' },
             { label: 'Employees', slug: 'utilities/employees' },
             { label: 'APIs', slug: 'utilities/apis' },
           ],
         },
+        {
+          label: 'Stores',
+          badge: { text: 'Soon', variant: 'caution' },
+          items: [
+            { label: 'Overview', slug: 'stores' },
+          ],
+        },
+        { label: 'FAQ', slug: 'faq' },
         {
           label: 'How to Contribute',
           items: [

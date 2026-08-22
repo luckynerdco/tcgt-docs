@@ -1,0 +1,75 @@
+---
+title: Overview
+description: Manage your card inventory and sync stock across TCGPlayer and Manapool.
+---
+
+import { Steps, Aside, Card, CardGrid } from '@astrojs/starlight/components';
+
+Use TCGTracking to manage your card inventory and sync stock across TCGPlayer and Manapool.
+
+## Overview
+
+TCGTracking includes a built-in inventory management system that lets you organize
+your card stock into physical locations and keep your listings in sync across
+multiple marketplaces. Instead of manually updating stock on each platform,
+TCGTracking handles it for you automatically.
+
+<Aside type="tip">
+Inventory management works alongside your existing order workflow. When an order is
+fulfilled, stock levels update automatically across your connected marketplaces.
+</Aside>
+
+### Supported marketplaces
+
+<CardGrid>
+  <Card title="TCGPlayer">Sync inventory directly with your TCGPlayer seller account.</Card>
+  <Card title="Manapool">Sync inventory directly with your Manapool seller account.</Card>
+</CardGrid>
+
+## Enabling inventory management
+
+Inventory management is not enabled by default. You need to turn it on in your
+settings before you can start using it.
+
+<Steps>
+
+1. **Go to your TCGTracking dashboard**
+
+2. **Navigate to Inventory in the main navigation**
+
+3. **Click the Settings subtab**
+
+4. **Toggle Inventory Management to on**
+
+5. **Save your settings**
+
+   Then head to [Inventory Settings](https://tcgtracking.com/dashboard.php?tab=inventory&subtab=inventory&section=settings).
+
+</Steps>
+
+<Aside type="note">
+Once enabled, you will see new tabs appear in the Inventory section including
+Locations, Stock, and Sync settings.
+</Aside>
+
+## Syncing with marketplaces
+
+TCGTracking lets you control exactly which marketplaces each location syncs with.
+This is useful if you keep separate inventory for different platforms. For example:
+
+<CardGrid>
+  <Card title="A-1-A">Manapool only</Card>
+  <Card title="A-2-A">TCGPlayer only</Card>
+  <Card title="A-3-A">Both platforms</Card>
+</CardGrid>
+
+<Aside type="tip">
+You can toggle sync on or off per platform for each individual location. This gives
+you full control over where your stock is listed without managing it manually on
+each site.
+</Aside>
+
+## Next steps
+
+- [Adding Stock](/inventory-management/adding-stock/) — get cards into your inventory.
+- [Locations](/inventory-management/locations/) — organize storage with the Shelf-Box-Divider system.

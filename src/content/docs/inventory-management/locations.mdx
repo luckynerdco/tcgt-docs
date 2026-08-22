@@ -1,10 +1,128 @@
 ---
 title: Locations
-description: Community guide for TCGTracking users — Locations.
+description: Create and organize inventory locations and control marketplace sync settings.
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import { Steps, Aside, Card, CardGrid } from '@astrojs/starlight/components';
 
-<Aside type="note" title="Coming soon">
-This guide hasn't been written yet. It's on the list — check back soon, or contribute one in the [Discord](https://discord.com/invite/CcZAuw22Q9).
+Learn how to create and organize inventory locations and control marketplace sync settings.
+
+## Overview
+
+Locations are physical spots in your storage where you keep your cards. By assigning
+cards to specific locations, you can quickly find them when fulfilling orders and
+control which marketplace each location syncs stock to.
+
+<Aside type="note">
+Before creating locations, make sure Inventory Management is enabled. See the
+[Overview](/inventory-management/overview/) for instructions.
+</Aside>
+
+## Naming system
+
+TCGTracking recommends using a **Shelf-Box-Divider** system to name your locations.
+This makes it easy to physically find cards when you need to pull them for an order.
+
+<CardGrid>
+  <Card title="A — Shelf">The shelf or row in your storage area.</Card>
+  <Card title="1 — Box">The box or bin on that shelf.</Card>
+  <Card title="A — Divider">The section within that box.</Card>
+</CardGrid>
+
+### Example location names
+
+<CardGrid>
+  <Card title="A-1-A">Shelf A, Box 1, Divider A</Card>
+  <Card title="A-1-B">Shelf A, Box 1, Divider B</Card>
+  <Card title="A-2-A">Shelf A, Box 2, Divider A</Card>
+  <Card title="B-1-A">Shelf B, Box 1, Divider A</Card>
+</CardGrid>
+
+<Aside type="tip">
+You do not have to use the Shelf-Box-Divider system — any naming convention works.
+The key is to be consistent so you can easily find cards when pulling orders.
+</Aside>
+
+## Creating a location
+
+<Steps>
+
+1. **Go to your TCGTracking dashboard**
+
+2. **Click Inventory in the navigation**
+
+3. **Click the Locations subtab**
+
+4. **Click + Create Location**
+
+5. **Enter a name for your location**
+
+   e.g. A-1-A
+
+6. **Choose which marketplaces this location should sync with**
+
+7. **Click Save**
+
+   Or head directly to [Locations](https://tcgtracking.com/dashboard.php?tab=inventory&subtab=inventory&section=locations).
+
+</Steps>
+
+<Aside type="tip">
+Create all your locations before you start adding stock. It is much easier to
+organize your inventory from the start than to reorganize it later.
+</Aside>
+
+## Controlling marketplace sync
+
+Each location can be set to sync with one or both of your connected marketplaces.
+This lets you keep dedicated inventory for specific platforms without any overlap.
+
+<CardGrid>
+  <Card title="A-1-A">Manapool ON · TCGPlayer OFF — stock here only lists on Manapool.</Card>
+  <Card title="A-2-A">Manapool OFF · TCGPlayer ON — stock here only lists on TCGPlayer.</Card>
+  <Card title="A-3-A">Manapool ON · TCGPlayer ON — stock here lists on both platforms.</Card>
+</CardGrid>
+
+To change the sync settings for a location:
+
+<Steps>
+
+1. **Go to Inventory → Locations**
+
+2. **Find the location you want to update**
+
+3. **Toggle the sync switch on or off for each marketplace**
+
+4. **Changes save automatically**
+
+</Steps>
+
+<Aside type="danger">
+Turning off sync for a marketplace will stop stock updates for that location on that
+platform. Make sure your listings are accurate before disabling sync.
+</Aside>
+
+## Adding stock to locations
+
+Once your locations are set up, you can start assigning cards to them when adding stock.
+
+<Steps>
+
+1. **Go to the Inventory tab in your dashboard**
+
+2. **Click Add Stock**
+
+3. **Search for the card you want to add**
+
+4. **Select the condition and set the quantity**
+
+5. **Choose the location from the dropdown**
+
+6. **Click Save**
+
+</Steps>
+
+<Aside type="tip">
+You can split a single card across multiple locations by adding stock separately for
+each location. This is useful if you have copies stored in different places.
 </Aside>

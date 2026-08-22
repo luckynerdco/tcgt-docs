@@ -1,10 +1,157 @@
 ---
 title: IMB Tracking
-description: Community guide for TCGTracking users — IMB Tracking.
+description: A buyer's guide to how TCGTracking monitors card orders through the mail.
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import { Steps, Aside, Card, CardGrid } from '@astrojs/starlight/components';
 
-<Aside type="note" title="Coming soon">
-This guide hasn't been written yet. It's on the list — check back soon, or contribute one in the [Discord](https://discord.com/invite/CcZAuw22Q9).
+A buyer's guide to how TCGTracking monitors your card orders through the mail.
+
+## What is IMB tracking?
+
+When a seller uses TCGTracking to ship your order, they print your address on an
+envelope that also includes a special barcode called an **Intelligent Mail
+Barcode** — or IMB for short. This is a USPS standard barcode that lets your
+envelope be tracked as it moves through the postal network.
+
+Think of it like a fingerprint for your envelope. Every barcode is unique to your
+specific shipment, and every time a USPS machine or postal worker scans it, that
+location and time gets recorded and sent to TCGTracking so you can follow along.
+
+IMB tracking is completely free. The seller does not need to purchase postage or
+pay extra for tracking — it is built directly into the envelope printing process.
+
+<Aside type="caution" title="Important">
+While most envelopes receive regular scan updates, some may never receive an
+initial scan or a final delivery scan. This is an exception, but it does happen.
+Your mail is still routed and delivered normally by USPS — the lack of a scan does
+not mean your package is lost or undeliverable.
 </Aside>
+
+IMB tracking numbers are specific to TCGTracking and do not work on the USPS
+website. To track your package, always use the TCGTracking tracking page at
+[tcgtracking.com/track.php](https://tcgtracking.com/track.php).
+
+## How it works
+
+Here is the simple version of what happens behind the scenes:
+
+- The seller prints your envelope with a unique IMB barcode using TCGTracking.
+- When the envelope enters the USPS system, a scanner reads the barcode.
+- USPS records that scan event and shares it through their **Informed Visibility** data feed.
+- TCGTracking picks up that data and updates your tracking in real time.
+- You can check the status of your package any time at [tcgtracking.com/track.php](https://tcgtracking.com/track.php).
+
+All of this happens automatically. The seller does not need to do anything after
+dropping your envelope in the mail — the tracking updates on its own as USPS scans
+it along the way.
+
+## Your package's journey
+
+Here is what typically happens to your envelope from the moment it is shipped to
+the moment it arrives at your door:
+
+<Steps>
+
+1. 📬 **Shipped** — Seller drops your envelope in the mail or at the post office.
+
+2. 🔍 **First Scan** — USPS scans the barcode at a regional facility and tracking begins.
+
+3. 🏭 **In Transit** — Moving through USPS sorting facilities.
+
+4. 🏠 **Delivered** — Arrives in your mailbox.
+
+</Steps>
+
+<Aside type="tip">
+Not every envelope gets scanned at every single facility — most times it scans at
+regional facilities. Gaps between scan events are completely normal and do not mean
+your package is lost.
+</Aside>
+
+## What the statuses mean
+
+Here is a plain-English explanation of each tracking status you might see:
+
+<CardGrid>
+  <Card title="Pending">The seller has printed your label but USPS has not scanned the barcode yet. Your package has not officially entered the postal system. This is normal and can take a day or two after shipping.</Card>
+  <Card title="In Transit">Your envelope has been scanned and is moving through the USPS network toward you. You may see multiple In Transit updates as it passes through sorting facilities.</Card>
+  <Card title="Out for Delivery">Your envelope is on a delivery vehicle and should arrive today. Keep an eye on your mailbox!</Card>
+  <Card title="Delivered">USPS has confirmed delivery. Check your mailbox if you have not seen it yet — sometimes the scan happens slightly before or after physical delivery.</Card>
+  <Card title="Return to Sender">USPS is returning the envelope to the seller, usually due to an address issue or refused mail. Contact the seller as soon as possible to resolve it.</Card>
+  <Card title="Exception">Something unexpected happened — a delivery attempt failure, damage, or another issue. Contact the seller so they can help investigate.</Card>
+</CardGrid>
+
+<Aside type="caution">
+If you don't receive your package within 3 business days after a delivery scan, or
+within the expected delivery time frame, please reach out to your seller.
+</Aside>
+
+## Common questions
+
+<details>
+<summary>Can I track my package on the USPS website?</summary>
+
+No. IMB tracking numbers are specific to TCGTracking and do not work on the USPS
+website. Use the TCGTracking tracking page at
+[tcgtracking.com/track.php](https://tcgtracking.com/track.php) and enter your
+tracking number there.
+
+</details>
+
+<details>
+<summary>My tracking shows delivered but I have not received anything.</summary>
+
+Check all your mailboxes and any secure mail areas first. USPS sometimes scans a
+delivery slightly before the physical delivery happens. If it has been more than a
+day since the Delivered status appeared, contact the seller — they can look into it
+further.
+
+</details>
+
+<details>
+<summary>My tracking has not updated in several days. Is my package lost?</summary>
+
+Gaps in tracking are common and do not always mean your package is lost. Envelopes
+often travel between facilities without being scanned. If there has been no movement
+for more than 7 days, reach out to the seller — they are the best person to help
+investigate.
+
+</details>
+
+<details>
+<summary>Why does my package seem to be going in the wrong direction?</summary>
+
+This is normal! USPS often routes mail through regional sorting hubs that may appear
+to be in the wrong direction geographically. Your package is most likely on the most
+efficient route even if it looks like a detour on a map.
+
+</details>
+
+<details>
+<summary>My tracking shows Return to Sender. What do I do?</summary>
+
+Contact the seller as soon as possible. Let them know your correct address and they
+will reship your order once it arrives back with them. Make sure your address is up
+to date on your marketplace account to prevent this from happening again.
+
+</details>
+
+<details>
+<summary>I moved recently. Will my order be forwarded to my new address?</summary>
+
+It depends on your USPS mail forwarding settings. Some standard envelopes may be
+forwarded automatically if you have a forwarding request active, but this is not
+guaranteed. The safest option is to update your address with the seller before they
+ship.
+
+</details>
+
+<details>
+<summary>Is IMB tracking the same as normal USPS tracking?</summary>
+
+IMB tracking uses the same USPS scanning network but through a different data feed
+called Informed Visibility. It works similarly to standard tracking but can only be
+viewed through TCGTracking — not on the USPS website directly.
+
+</details>

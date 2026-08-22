@@ -1,0 +1,66 @@
+---
+title: Splitting Orders
+description: Split a single order into multiple packages for separate shipment.
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+Learn how to split a single order into multiple packages for separate shipment.
+
+## Overview
+
+Sometimes an order needs to be shipped in more than one package — for example, when
+items won't fit together, need different shipping methods, or are being fulfilled at
+different times. TCGTracking lets you split any order into multiple packages and
+transfer items between them.
+
+Splitting an order creates a new linked package going to the same address. Insurance
+settings are copied from the original order and can be adjusted on the new package.
+
+<Aside type="note">
+Items are not automatically moved when you create a new package. You need to manually
+transfer items from the original order after the package is created.
+</Aside>
+
+## Video walkthrough
+
+<div class="tcg-video">
+  <iframe src="https://www.youtube.com/embed/aHJEn7y8kS8" title="Splitting orders walkthrough" allowfullscreen></iframe>
+</div>
+
+## Step by step
+
+<Steps>
+
+1. **Find your order and click the + button**
+
+   After importing your order, find it in your orders list. On the right-hand side in the Actions column, click the "+" button to begin the split process.
+
+2. **Verify the address and create the package**
+
+   A dialog will appear showing the shipping address and a summary of items in the original order. Review the address, then click "Create Package" to create the new linked package.
+
+   *(Screenshot: the Add Package dialog showing shipping address and Create Package button.)*
+
+3. **Open the original order and click Transfer Items**
+
+   Click on the original order to open it. You will see the full list of items. Click "Transfer Items" at the top of the items section.
+
+   *(Screenshot: the Edit Order screen with the Transfer Items button.)*
+
+4. **Select items and transfer them**
+
+   The Transfer Items to Add-On Order dialog will appear showing all items in the original order. Check the boxes next to the items you want to move to the new package, then click "Transfer Selected Items".
+
+   *(Screenshot: the Transfer Items to Add-On Order dialog with item selection.)*
+
+5. **Continue with your normal workflow**
+
+   The selected items are now in the new package. Both orders will appear in your orders list and can be printed and shipped separately as normal.
+
+</Steps>
+
+<Aside type="tip">
+You can split an order into more than two packages by repeating the process — just
+click the + button again on the original order to create additional packages.
+</Aside>

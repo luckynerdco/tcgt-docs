@@ -1,10 +1,166 @@
 ---
 title: Printing
-description: Community guide for TCGTracking users — Printing.
+description: Print trackable envelopes, carrier labels, and process orders for shipment.
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import { Steps, Aside, Card, CardGrid } from '@astrojs/starlight/components';
 
-<Aside type="note" title="Coming soon">
-This guide hasn't been written yet. It's on the list — check back soon, or contribute one in the [Discord](https://discord.com/invite/CcZAuw22Q9).
+Learn how to print trackable envelopes, carrier labels, and process orders for shipment.
+
+## Overview
+
+TCGTracking gives you two ways to ship your orders. The first is printing
+trackable envelopes with USPS Intelligent Mail Barcodes, which is completely free
+and provides real-time tracking. The second is purchasing carrier labels through
+EasyPost for orders that need full postage.
+
+Trackable envelopes are free and work great for standard card orders. Carrier
+labels are needed when you want to purchase postage directly through TCGTracking.
+
+## Printing trackable envelopes
+
+Trackable envelopes use USPS Intelligent Mail Barcodes to provide real-time
+tracking at no cost. All you need is a standard home printer.
+
+<Steps>
+
+1. **Import your orders using Quick Create**
+
+2. **Select the orders you want to ship using the checkboxes**
+
+3. **Click Print Envelopes**
+
+4. **Choose your envelope size**
+
+5. **TCGTracking will generate a PDF with all your envelopes**
+
+6. **Print the PDF on your home printer**
+
+7. **Fold, seal, and drop in the mail**
+
+</Steps>
+
+<Aside type="danger" title="Always print at 100% scale">
+Do not use "fit to page" or "scale to fit" options. Resizing the barcode will
+cause tracking to fail.
 </Aside>
+
+### Supported envelope sizes
+
+<CardGrid>
+  <Card title="#10 Envelope">Standard business envelope. Most common for single card orders.</Card>
+  <Card title="A2 Envelope">Smaller greeting card size. Good for light single card shipments.</Card>
+  <Card title="6x9 Bubble Mailer">Great for multiple cards or cards that need extra protection.</Card>
+  <Card title="PWE">Plain white envelope for basic shipments.</Card>
+</CardGrid>
+
+## Batch printing
+
+Batch printing lets you process up to 100 orders at once, generating a single PDF
+with all your envelopes ready to print in one go.
+
+<Steps>
+
+1. **Import all your orders for the session**
+
+2. **Click the checkbox at the top to select all orders**
+
+3. **Click Batch Print**
+
+4. **Review the order summary and confirm**
+
+5. **Print the generated PDF**
+
+</Steps>
+
+<Aside type="tip">
+Many sellers do one or two batch print sessions per day. Import all your orders,
+batch print, and ship them all at once to save time.
+</Aside>
+
+## Carrier labels
+
+If you need to purchase postage, you can print USPS carrier labels directly
+through TCGTracking using the EasyPost integration.
+
+<Steps>
+
+1. **Make sure you have EasyPost connected**
+
+   And your wallet funded — see the [EasyPost Integration](/printing-shipping/easypost-integration/) guide.
+
+2. **Select the orders you want to ship**
+
+3. **Click Purchase Labels**
+
+4. **Select your mail class**
+
+   Ground Advantage, Priority, etc.
+
+5. **Confirm the purchase and print your labels**
+
+</Steps>
+
+### Available mail classes
+
+<CardGrid>
+  <Card title="First Class Letters">Affordable everyday letter shipping.</Card>
+  <Card title="Ground Advantage">Affordable tracked shipping. Replaces First Class Package.</Card>
+  <Card title="Priority Mail">Faster delivery with tracking. Good for higher value orders.</Card>
+  <Card title="Media Mail">Low cost option for eligible media items only.</Card>
+</CardGrid>
+
+## Shipping to military addresses
+
+TCGTracking supports shipping to APO, FPO, and DPO military addresses through
+EasyPost with full customs support.
+
+<Steps>
+
+1. **Make sure EasyPost is connected to your account**
+
+2. **Enter the military address as normal during order creation**
+
+3. **TCGTracking will automatically detect the military address type**
+
+4. **A customs form (CN22 or commercial invoice) will be generated automatically**
+
+5. **Print the label and customs form together and attach to your package**
+
+</Steps>
+
+<Aside type="caution">
+Military address shipments require a carrier label purchased through EasyPost.
+Free trackable envelopes cannot be used for APO/FPO/DPO addresses.
+</Aside>
+
+## Printing tips
+
+<Steps>
+
+1. **Always print at 100% scale**
+
+   Never use "fit to page." The barcode must be printed at exact size for USPS
+   scanners to read it correctly.
+
+2. **Use good quality paper**
+
+   Standard 20lb copy paper works fine. Avoid very thin paper, as barcodes may
+   bleed through.
+
+3. **Check ink levels before a big batch**
+
+   A faded barcode may not scan correctly. Make sure your printer has sufficient
+   ink before printing a large batch.
+
+4. **Verify addresses before printing**
+
+   TCGTracking flags potential address issues automatically. Always resolve any
+   warnings before printing.
+
+5. **Drop off at the post office or use a blue box**
+
+   For trackable envelopes, drop them at a USPS collection point to ensure they
+   get scanned promptly.
+
+</Steps>

@@ -1,0 +1,160 @@
+---
+title: TCGTracking Bridge
+description: Sync your TCGPlayer orders, inventory, and pricing directly to your TCGTracking dashboard.
+---
+
+import { Steps, Aside } from '@astrojs/starlight/components';
+
+Sync your TCGPlayer orders, inventory, and pricing directly to your TCGTracking
+dashboard.
+
+## Overview
+
+The TCGTracking Bridge is a Chrome browser extension that works like you logging into
+your TCGPlayer seller portal. It reads the same information your browser sees when you
+visit TCGPlayer — orders, inventory, pricing — and relays it to your TCGTracking
+dashboard so you can manage everything in one place.
+
+### How it works
+
+- After you sign into TCGPlayer in your browser, the extension reads information from your seller portal exactly as if you were viewing those pages yourself.
+- All requests are made by your device, your IP address, and your browser — identical to normal browsing.
+- TCGTracking does not store or have access to your OAuth tokens, session cookies, or any secret keys.
+- The extension communicates directly between your browser and TCGPlayer — your credentials are never transmitted.
+
+### What it does
+
+- View and import orders from your TCGPlayer seller portal.
+- Push inventory quantities and pricing directly to TCGPlayer by hitting "Sync Now" on the inventory screen or "Sync to TCGPlayer" via the sidebar.
+- Read your seller ID and account details.
+- Auto-detects if you need to log into TCGPlayer first.
+- All communication stays between your browser and TCGPlayer.
+
+<Aside type="note">
+You must be logged into TCGPlayer in Chrome for the extension to work. If your session
+expires, the extension will auto-detect this and prompt you to log in again.
+</Aside>
+
+## Installing the extension
+
+The TCGTracking Bridge is installed as an unpacked Chrome extension. This takes about
+two minutes.
+
+<Steps>
+
+1. **Download the extension ZIP**
+
+   Download the Bridge Extension ZIP file from the link at the bottom of this page.
+
+2. **Extract the ZIP to a folder**
+
+   Extract the contents to a permanent folder on your computer — for example, create a folder called `TCGTracking-Bridge` on your Desktop.
+
+3. **Open Chrome Extensions and enable Developer Mode**
+
+   Open Chrome and type `chrome://extensions` in the address bar. Toggle Developer mode ON using the switch in the top-right corner.
+
+4. **Load the unpacked extension**
+
+   Click Load unpacked and select the folder you extracted in step 2. The TCGTracking Bridge extension will appear in your extensions list.
+
+</Steps>
+
+<Aside type="danger" title="Don't delete the folder">
+Do not delete the extracted folder after loading. Chrome reads from it directly. If
+you move or delete it, the extension will break and you will need to reload it.
+</Aside>
+
+## Importing inventory from TCGPlayer
+
+Once the Bridge extension is installed and you are logged into TCGPlayer in Chrome,
+you can bulk import your live inventory directly into TCGTracking in just a few clicks
+— no file export or mapping step needed.
+
+<Steps>
+
+1. **Go to the Inventory tab**
+
+   Navigate to the [Inventory tab](https://tcgtracking.com/dashboard.php?tab=inventory) in your TCGTracking dashboard.
+
+2. **Open Bulk Import**
+
+   Click Bulk Tools, then select Bulk Import / Update.
+
+3. **Select From TCGPlayer (Bridge)**
+
+   Click the From TCGPlayer (Bridge) tab. If the extension is installed and you are signed in, you will see a green message: "TCGPlayer Bridge detected & signed in."
+
+4. **Fetch your inventory**
+
+   Click Fetch My Inventory. Your live inventory will load straight into the review screen with no mapping step required.
+
+</Steps>
+
+<Aside type="tip">
+If the Bridge is not installed or you are not signed into TCGPlayer, TCGTracking will
+fall back to your most recent Flow desktop-agent snapshot automatically.
+</Aside>
+
+## Importing orders from TCGPlayer
+
+Once the Bridge extension is installed and you are logged into TCGPlayer in Chrome,
+you can pull your open orders directly into TCGTracking without exporting any files.
+
+<Steps>
+
+1. **Go to the Orders tab**
+
+   Navigate to the [Orders tab](https://tcgtracking.com/dashboard.php?tab=orders&orders_tab=open) in your TCGTracking dashboard.
+
+2. **Open the TCGPlayer Bridge tab**
+
+   Click the [TCGPlayer Bridge](https://tcgtracking.com/dashboard.php?tab=orders&orders_tab=tcgbridge&page=1) tab. Your open TCGPlayer orders will load automatically.
+
+3. **Import your orders**
+
+   Review the orders and click Import. The orders will be pulled into TCGTracking and ready to process.
+
+4. **Return to Open Orders**
+
+   Head back to your Open Orders tab and continue with your normal shipping workflow — print envelopes, add insurance, and ship.
+
+</Steps>
+
+<Aside type="note">
+Make sure you are logged into TCGPlayer in Chrome before using the Bridge tab. If your
+session has expired, TCGTracking will prompt you to log back in.
+</Aside>
+
+## Important notes
+
+- This extension is **not affiliated with, endorsed by, or associated with TCGPlayer**.
+- It reads publicly available seller portal data using your authenticated browser session.
+- API calls go directly from your browser to TCGPlayer — if you choose to import or sync data, it is processed at your request.
+- You must be logged into TCGPlayer in Chrome for the extension to work.
+
+<Aside type="note">
+This extension only works in Chrome. Other browsers such as Firefox, Safari, and Edge
+are not currently supported.
+</Aside>
+
+## Beta disclaimer
+
+<Aside type="danger" title="Beta software disclaimer">
+This tool is provided as-is for convenience. TCGTracking makes no warranties regarding
+its accuracy, reliability, or continued availability. Use at your own discretion. You
+are responsible for verifying any data or actions performed through this extension
+before relying on them for business decisions. By using this extension, you accept all
+responsibility for its use and any consequences thereof.
+</Aside>
+
+## Download
+
+The current release is **TCGTracking Bridge Extension v2.4.2** (~16KB · Chrome ·
+Manifest V3). Download it from your [TCGTracking dashboard](https://tcgtracking.com).
+
+<Aside type="tip">
+Looking for more Chrome tools? [TCGTracking Utilities](/utilities/tcgtracking-utilities/)
+is a separate extension with quick marketplace links, PIP claim autofill, duplicate
+order detection, and other workflow shortcuts inside your dashboard.
+</Aside>
