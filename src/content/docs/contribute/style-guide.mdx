@@ -1,0 +1,46 @@
+---
+title: Style Guide
+description: Formatting conventions for TCGT.Help guides.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+A few light conventions keep guides consistent and easy to read. None of this is
+strict — a maintainer will help tidy formatting during review.
+
+## Voice
+
+Write like one seller helping another: practical, direct, and friendly. Prefer
+"you" and active steps ("Click **Import**") over passive description. Call out
+gotchas honestly.
+
+## Structure
+
+Use `##` headings to break a guide into clear sections. Keep paragraphs short.
+Lead with the task, then the details.
+
+## Handy components
+
+These are available in any `.mdx` guide:
+
+- **Steps** — for numbered, ordered instructions.
+- **Asides** — callout boxes for tips and warnings:
+
+<Aside type="tip">Use a tip for a helpful shortcut.</Aside>
+<Aside type="caution">Use caution for something that can go wrong.</Aside>
+
+## Steps example
+
+<Steps>
+
+1. Describe the first action in bold, then explain it.
+
+2. Keep each step to a single clear action.
+
+</Steps>
+
+<Aside type="note">
+When in doubt, look at a finished guide like **Importing Orders** and follow the
+same patterns. And don't sweat the details — just get the workflow written down,
+and we'll polish formatting together in review.
+</Aside>

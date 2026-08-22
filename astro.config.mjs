@@ -94,6 +94,14 @@ export default defineConfig({
             { label: 'APIs', slug: 'utilities/apis' },
           ],
         },
+        {
+          label: 'How to Contribute',
+          items: [
+            { label: 'Overview', slug: 'contribute/overview' },
+            { label: 'Editing a Guide', slug: 'contribute/editing-a-guide' },
+            { label: 'Style Guide', slug: 'contribute/style-guide' },
+          ],
+        },
       ],
       // Show a "last updated" line pulled from git history on each page.
       lastUpdated: true,

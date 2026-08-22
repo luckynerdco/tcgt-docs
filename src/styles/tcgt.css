@@ -524,3 +524,13 @@ starlight-theme-select select,
   font-size: 0.75rem; color: var(--sl-color-gray-4); line-height: 1.5;
   border-top: 1px solid var(--tcg-border-soft);
 }
+
+/* The "How to Contribute" card — gently accented as a community call-to-action. */
+.tcg-scard-accent {
+  border-color: var(--tcg-accent-line);
+  background: linear-gradient(150deg, var(--tcg-accent-dim), transparent 70%), var(--tcg-surface);
+}
+.tcg-scard-accent:hover {
+  border-color: var(--tcg-accent);
+  background: linear-gradient(150deg, var(--tcg-accent-dim), transparent 60%), var(--tcg-surface-hover);
+}

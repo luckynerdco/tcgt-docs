@@ -1,0 +1,86 @@
+---
+title: Editing a Guide
+description: Step-by-step — how to edit or write a guide and open a pull request.
+---
+
+import { Steps, Tabs, TabItem, Aside } from '@astrojs/starlight/components';
+
+There are two ways to make an edit: right in your browser (easiest, great for
+small changes), or locally on your computer (better for writing a whole guide
+with live preview). Both end the same way — a pull request that gets reviewed
+before going live.
+
+<Tabs>
+  <TabItem label="In the browser">
+
+Best for typos, wording, and small fixes — no software to install.
+
+<Steps>
+
+1. Open the guide you want to change on TCGT.Help and note its title.
+
+2. In the GitHub repository, find the matching file under
+   `src/content/docs/…` (for example, the IMB Tracking page is
+   `src/content/docs/printing-shipping/imb-tracking.mdx`).
+
+3. Click the **pencil icon** (Edit this file) in the top-right of the file view.
+
+4. Make your changes in the editor. Everything is written in Markdown — see the
+   [Style Guide](/contribute/style-guide/) for the basics.
+
+5. Click **Commit changes**, choose **"Create a new branch and start a pull
+   request,"** and describe what you changed. That's it — a maintainer takes it
+   from there.
+
+</Steps>
+
+  </TabItem>
+  <TabItem label="On your computer">
+
+Best for writing a full guide, because you can preview it live as you type.
+
+<Steps>
+
+1. Install [GitHub Desktop](https://desktop.github.com) and clone the TCGT.Help
+   repository to your machine.
+
+2. Install [Node.js](https://nodejs.org) (LTS), then in the project folder run
+   `npm install` once, followed by `npm run dev`. Open `http://localhost:4321`
+   to preview the site live.
+
+3. Edit or add files under `src/content/docs/…`. The browser refreshes as you save.
+
+4. In GitHub Desktop, write a short summary, click **Commit to main**, then
+   **Push origin**, and finally **Create Pull Request**.
+
+</Steps>
+
+  </TabItem>
+</Tabs>
+
+## Adding a brand-new guide
+
+To replace a "Coming soon" page, just open its file and swap the placeholder for
+your content. To add a page that doesn't exist yet, create a new `.mdx` file in
+the right category folder with this at the top:
+
+```mdx
+---
+title: Your Guide Title
+description: One sentence describing the guide.
+---
+
+Your content starts here.
+```
+
+<Aside type="note" title="Adding it to the menu">
+A new page also needs a line in the sidebar (`astro.config.mjs`). If that part
+feels over your head, don't worry — open the pull request anyway and mention it,
+and a maintainer will wire it in.
+</Aside>
+
+## After you submit
+
+A maintainer reviews every pull request before it goes live, so don't stress
+about getting it perfect — that's what review is for. Once it's approved and
+merged, your guide publishes to TCGT.Help automatically.
