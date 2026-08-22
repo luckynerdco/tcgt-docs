@@ -1,0 +1,21 @@
+{
+  "name": "tcgt-docs",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "TCGTracking documentation — Starlight, themed to match the tcgt.help redesign",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^5.0.0",
+    "@astrojs/starlight": "^0.38.0",
+    "@fontsource-variable/geist": "^5.2.5",
+    "@fontsource-variable/geist-mono": "^5.2.5",
+    "astro": "^6.0.0",
+    "sharp": "^0.34.0"
+  }
+}

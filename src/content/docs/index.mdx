@@ -1,0 +1,38 @@
+---
+title: TCGTracking
+description: Guides and documentation for the TCG shipping, tracking, and order-management toolkit.
+template: splash
+hero:
+  tagline: The free toolkit for printing, tracking, and managing TCG orders — documented.
+  actions:
+    - text: Get Started
+      link: /getting-started/overview/
+      icon: right-arrow
+      variant: primary
+    - text: Join the Discord
+      link: https://discord.gg/your-invite
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Quick links
+
+<CardGrid stagger>
+  <Card title="Getting Started" icon="rocket">
+    New here? Start with the [overview](/getting-started/overview/) and
+    [installation](/getting-started/installation/).
+  </Card>
+  <Card title="Printing & Shipping" icon="document">
+    Labels, [IMB tracking](/imb-tracking/), [PIP insurance](/pip-insurance/),
+    and [EasyPost](/easypost/).
+  </Card>
+  <Card title="Order Management" icon="list-format">
+    [Import](/order-management/importing-orders/) and
+    [split](/order-management/splitting-orders/) orders from your marketplaces.
+  </Card>
+  <Card title="The Bridge" icon="puzzle">
+    Connect your tools with the [TCGTracking Bridge](/bridge/).
+  </Card>
+</CardGrid>

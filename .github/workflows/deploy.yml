@@ -1,0 +1,44 @@
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  # Runs on GitHub-hosted runners — safe for untrusted fork PRs.
+  # Just proves the site compiles before a maintainer merges.
+  build-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+
+  # Runs ONLY on push to main (post-merge = trusted code), on your
+  # self-hosted runner inside the LAN. Builds and rsyncs to CT 102.
+  # Never runs on pull_request, so untrusted code never reaches it.
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: [self-hosted, linux]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+
+      # The runner's own SSH key (authorized on CT 102) does the auth —
+      # no GitHub secrets needed. --delete keeps CT 102 an exact mirror of dist/.
+      - name: Deploy to CT 102 over LAN
+        run: |
+          rsync -avz --delete \
+            -e "ssh -o StrictHostKeyChecking=accept-new" \
+            dist/ root@192.168.1.21:/var/www/tcgt.help/

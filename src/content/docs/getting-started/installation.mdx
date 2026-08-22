@@ -1,0 +1,44 @@
+---
+title: Installation
+description: Get TCGTracking set up and connected to your carrier.
+---
+
+import { Tabs, TabItem, Steps } from '@astrojs/starlight/components';
+
+Getting set up takes a few minutes. Pick your platform below.
+
+<Tabs>
+  <TabItem label="Web">
+    Nothing to install — sign in at [tcgt.help](https://tcgt.help) and connect a
+    carrier under **Settings → Carriers**.
+  </TabItem>
+  <TabItem label="Bridge (local)">
+    The Bridge runs alongside your local print stack. Grab the latest release and
+    run it.
+  </TabItem>
+</Tabs>
+
+## First-time setup
+
+<Steps>
+
+1. **Create your account** at [tcgt.help](https://tcgt.help) and verify your email.
+
+2. **Connect a carrier.** Under **Settings → Carriers**, add your EasyPost key:
+
+   ```bash
+   # Paste your key when prompted, or set it as an environment variable
+   export EASYPOST_API_KEY="EZAK_your_key_here"
+   ```
+
+3. **Print a test label** to confirm your printer and tracking are wired up.
+
+</Steps>
+
+:::caution
+Keep your EasyPost key private — treat it like a password. If it leaks, rotate it
+from the EasyPost dashboard immediately.
+:::
+
+Next: import your first batch of orders in
+[Importing Orders](/order-management/importing-orders/).

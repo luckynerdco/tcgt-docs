@@ -1,0 +1,27 @@
+---
+title: Importing Orders
+description: Pull orders in from TCGplayer, ManaPool, and eBay.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+TCGTracking pulls orders from your connected marketplaces so you can print and
+ship from one place instead of jumping between tabs.
+
+<Steps>
+
+1. Go to **Orders → Import**.
+
+2. Choose a source — **TCGplayer**, **ManaPool**, or **eBay**.
+
+3. Pick a date range and click **Import**. New orders land in your **Open** queue.
+
+</Steps>
+
+:::tip
+Imports are incremental — running the same import again only pulls orders you
+haven't seen yet, so it's safe to re-run whenever.
+:::
+
+Once orders are in, you can [split large orders](/order-management/splitting-orders/)
+across multiple packages before printing labels.
