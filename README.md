@@ -3,7 +3,7 @@
 A free, community-run help center for people who sell with **TCGTracking** —
 written by sellers, for sellers. 🃏
 
-> **Heads up:** TCGT.Help is an independent community project. It is **not
+> **Heads up:** [TCGT.Help](https://tcgt.help) is an independent community project. It is **not
 > affiliated with, endorsed by, or operated by TCGTracking.** It's just sellers
 > helping sellers get the most out of the platform.
 
