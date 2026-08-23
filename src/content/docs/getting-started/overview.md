@@ -27,7 +27,7 @@ day-to-day workflows once you're in.
 - **Utilities & More** — audits, purchasing opportunities, selling stats, employees, and APIs.
 
 :::tip[Want to help?]
-Most guides are still being written. If you know a workflow well, come share it
-in the [Discord](https://discord.com/invite/CcZAuw22Q9) — this site grows when
-users contribute.
+Most guides are still being written. If you know a workflow well, join the
+[Discord](https://discord.com/invite/CcZAuw22Q9) and message
+**Chris | Lucky Nerd | 2600** — this site grows when sellers share what they know.
 :::
