@@ -10,7 +10,7 @@ jobs:
   # Runs on GitHub-hosted runners — safe for untrusted fork PRs.
   # Just proves the site compiles before a maintainer merges.
   build-check:
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux, x64]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
