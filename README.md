@@ -119,7 +119,7 @@ a question in Discord. We're all just trying to make shipping cards a little eas
 ## About
 
 TCGT.Help is an independent, community-run resource for users of TCGTracking. It is
-not affiliated with, endorsed by, or operated by TCGTracking. "TCGTracking" is the
+not affiliated with or operated by TCGTracking. "TCGTracking" is the
 property of its respective owner.
 
 Built with [Astro](https://astro.build) + [Starlight](https://starlight.astro.build).
