@@ -544,4 +544,4 @@ starlight-theme-select select,
 .tcg-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
 /* Slim the right-hand "On this page" table of contents (default is 14rem). */
-.right-sidebar-container { --sl-sidebar-width: 10.5rem; }
+.right-sidebar-container { --sl-sidebar-width: 8rem; }
