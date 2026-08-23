@@ -37,7 +37,7 @@ jobs:
 
       # The runner's own SSH key (authorized on CT 102) does the auth —
       # no GitHub secrets needed. --delete keeps CT 102 an exact mirror of dist/.
-      - name: Deploy to CT 102 over LAN
+      - name: Deploy to CT 102
         run: |
           rsync -avz --delete \
             -e "ssh -o StrictHostKeyChecking=accept-new" \
