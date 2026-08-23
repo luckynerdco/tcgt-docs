@@ -24,7 +24,7 @@ jobs:
   # self-hosted runner inside the LAN. Builds and rsyncs to CT 102.
   # Never runs on pull_request, so untrusted code never reaches it.
   deploy:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: [self-hosted, linux, x64]
     steps:
       - uses: actions/checkout@v7
