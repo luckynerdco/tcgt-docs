@@ -25,7 +25,7 @@ jobs:
   # Never runs on pull_request, so untrusted code never reaches it.
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    runs-on: [self-hosted, linux]
+    runs-on: [self-hosted, linux, x64]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
