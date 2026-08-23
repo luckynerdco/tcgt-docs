@@ -14,7 +14,7 @@
   /* Display face for headings, brand, and hero — matches tcgt.help. */
   --tcg-display: 'Space Grotesk Variable', 'Inter Variable', system-ui, sans-serif;
 
-  --sl-content-width: 48rem;
+  --sl-content-width: 56rem;
   --sl-nav-height: 3.5rem;               /* 52px topbar, matching the source */
 
   /* Radii, matched to the source: cards 13px, controls 7px. */
