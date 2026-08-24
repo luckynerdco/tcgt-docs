@@ -42,6 +42,13 @@ insure a high volume of shipments.
 - Coverage includes loss and damage in transit
 - You set the declared value when adding insurance to a shipment
 
+<Aside type="caution" title="Trackable envelopes only">
+PIP insurance does **not** currently apply to carrier labels — even for $50 shipments.
+TCGTracking will ignore insurance added to a carrier-label order (and in v2, it won't
+let you select insurance on one). For higher-value carrier-label shipments, use the
+carrier's own insurance through EasyPost instead.
+</Aside>
+
 ## How to use PIP insurance
 
 Adding PIP insurance to a shipment takes just one extra step during the printing
@@ -75,6 +82,7 @@ directly through your TCGTracking dashboard.
 
 - **Lost package** — if your package has not been delivered and tracking shows no movement for an extended period.
 - **Damaged package** — if the recipient reports receiving a damaged shipment.
+- **Shortage** — if the package arrived but some of the items inside are missing.
 
 ### When can I file a claim?
 
@@ -82,7 +90,21 @@ A claim may be filed 30 days after the first scan of a mailpiece. If a mailpiece
 never scanned, you can manually attest that you have mailed the package, and must
 wait 30 days from the date of attestation.
 
+<Aside type="danger" title="Don't file too early">
+Wait the full 30 days before filing. PIP doesn't care *when* the buyer reports
+non-receipt — only that **you** file the claim after the 30-day mark. Filing before
+30 days tends to cause problems with the claim (even though, ultimately, proof of the
+refund you issued ends up being accepted). When in doubt, wait until day 30.
+</Aside>
+
 ### How to file a claim
+
+<Aside type="tip" title="File directly on PIP">
+You can skip navigating the dashboard and go straight to the PIP claim form:
+[pip-claim.com claim form](https://www.pip-claim.com/PIPClaim/claim/createclaimUSPSform).
+You'll still want your policy number and tracking number from your TCGTracking
+dashboard (steps below) to fill it out.
+</Aside>
 
 <Steps>
 
@@ -116,6 +138,29 @@ find orders that need claims sent in. TCGTracking's built-in tracking data is
 automatically included with your claim, which speeds up the process significantly.
 </Aside>
 
+### Filling out the claim form
+
+A few fields on the PIP form trip people up. Here's what goes where:
+
+- **Insured's Name** and **address** — these must match **exactly** the name and address
+  in your TCGTracking profile under **Personal Information**
+  ([Profile → Personal information](https://tcgtracking.com/dashboard.php?tab=profile)).
+  This is you, the seller being paid.
+- **Send claim check to the attention of** — your full name (the person being paid and
+  filling out the claim).
+- **Upload a copy of your original invoice to the consignee** — anything from the
+  marketplace showing the order amount and details (an order confirmation works fine).
+- **Upload a copy of the correspondence from the consignee advising you of the loss** —
+  a message from the buyer, or the case they opened on the marketplace.
+- **Invoice Number** — not required. If you do fill it in, it's your order number.
+
+<Aside type="note" title="What's the claim reference number?">
+TCGTracking has a field for a "claim reference number," but PIP doesn't actually issue
+one. Just use your **tracking number**. (If you filled in the optional Invoice Number
+field on the PIP form, it's unclear whether that changes anything — but the tracking
+number is the safe answer.)
+</Aside>
+
 ## Common questions
 
 <details>
@@ -131,6 +176,15 @@ the declared value manually during the printing process.
 
 No. The maximum coverage per shipment is $50. For higher-value shipments, consider
 using a carrier label with built-in insurance through EasyPost instead.
+
+</details>
+
+<details>
+<summary>Does PIP cover carrier labels?</summary>
+
+No — PIP applies to trackable envelopes only, not carrier labels, even at $50.
+TCGTracking will ignore insurance added to a carrier-label order. For carrier-label
+shipments, use the carrier's own insurance through EasyPost.
 
 </details>
 
