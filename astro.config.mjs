@@ -37,7 +37,7 @@ export default defineConfig({
         {
           icon: 'discord',
           label: 'Discord',
-          href: 'https://discord.gg/your-invite',
+          href: 'https://discord.com/invite/CcZAuw22Q9',
         },
       ],
       // Turn off the default "Built with Starlight" note; this is your site.

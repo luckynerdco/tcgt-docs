@@ -1,10 +1,9 @@
 ---
 title: TCGT.Help
 description: A community-run help site for TCGTracking sellers — written by users, for users. Not affiliated with TCGTracking.
-template: splash
 head:
   - tag: style
-    content: '.content-panel:has(> .sl-container > #_top){display:none;}'
+    content: '.content-panel:has(> .sl-container > #_top){display:none;} mobile-starlight-toc{display:none!important;} .right-sidebar-container{display:none;} @media (min-width:50rem){ [data-has-sidebar] .sidebar-pane{display:none;} .main-frame{padding-inline-start:0;} .main-pane{max-width:none;} }'
 ---
 
 <div class="tcg-home not-content">
@@ -69,5 +68,7 @@ head:
   <div class="cc-spacer"></div>
   <a class="tcg-cta" href="https://discord.com/invite/CcZAuw22Q9">Join the Discord</a>
 </div>
+
+<p class="tcg-home-disclaimer">TCGT.Help is an independent, community-run help site for users of TCGTracking. It is not affiliated with, endorsed by, or operated by TCGTracking. “TCGTracking” is the property of its respective owner.</p>
 
 </div>
