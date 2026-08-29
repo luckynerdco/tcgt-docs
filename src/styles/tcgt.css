@@ -544,15 +544,13 @@ starlight-theme-select select,
 .tcg-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
 
-/* Platform status strip (links to TCGTracking's status page). */
+/* Platform status panel (per-service, populated by the /api/status script). */
 .tcg-status {
-  display: flex; align-items: center; gap: 1.1rem; margin-top: 2.25rem;
-  padding: 1.1rem 1.4rem; border-radius: var(--tcg-radius);
+  margin-top: 2.25rem; padding: 1.15rem 1.4rem; border-radius: var(--tcg-radius);
   border: 1px solid var(--tcg-border-soft); background: var(--tcg-surface);
-  text-decoration: none; color: inherit;
-  transition: border-color .16s var(--tcg-ease), background .16s var(--tcg-ease);
 }
-.tcg-status:hover { border-color: var(--tcg-border); background: var(--tcg-surface-hover); }
+.tcg-status-head { display: flex; align-items: center; gap: 1.1rem; }
+.tcg-status-headtext { min-width: 0; }
 .tcg-status-ic {
   width: 42px; height: 42px; border-radius: 11px; flex: none;
   display: grid; place-items: center;
@@ -561,11 +559,30 @@ starlight-theme-select select,
 .tcg-status-ic svg { width: 21px; height: 21px; }
 .tcg-status h4 { font-family: var(--tcg-display); font-weight: 600; margin: 0; font-size: 1rem; }
 .tcg-status p { margin: .15rem 0 0; font-size: .88rem; color: var(--sl-color-gray-2); }
-.tcg-status-btn { white-space: nowrap; font-weight: 600; font-size: .88rem; color: var(--tcg-teal); }
-@media (max-width: 34rem) { .tcg-status { flex-wrap: wrap; } }
+.tcg-status-btn { white-space: nowrap; font-weight: 600; font-size: .88rem; color: var(--tcg-teal); text-decoration: none; }
+.tcg-status-btn:hover { text-decoration: underline; }
 
-/* Live status states (set by the /api/status fetch script on the homepage). */
+/* Per-service grid with status dots. Hidden entirely until the script fills it. */
+.tcg-status-list {
+  list-style: none; margin: 1rem 0 0; padding: 1rem 0 0;
+  border-top: 1px solid var(--tcg-border-soft);
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: .6rem 1rem;
+}
+.tcg-status-list:empty { display: none; }
+.tcg-status-list li { display: flex; align-items: center; gap: .6rem; font-size: .9rem; color: var(--sl-color-gray-1); }
+.tcg-status-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex: none;
+  background: var(--sl-color-gray-5);
+  box-shadow: 0 0 0 3px color-mix(in oklch, var(--sl-color-gray-5) 22%, transparent);
+}
+.tcg-status-dot.ok { background: var(--tcg-success); box-shadow: 0 0 0 3px var(--tcg-success-dim); }
+.tcg-status-dot.degraded { background: var(--tcg-warn); box-shadow: 0 0 0 3px var(--tcg-warn-dim); }
+.tcg-status-dot.down { background: var(--tcg-danger); box-shadow: 0 0 0 3px color-mix(in oklch, var(--tcg-danger) 22%, transparent); }
+.tcg-status-dot.maintenance { background: var(--tcg-accent); box-shadow: 0 0 0 3px var(--tcg-accent-dim); }
+@media (max-width: 34rem) { .tcg-status-head { flex-wrap: wrap; } }
+
+/* Overall-status tint on the header icon (set by the /api/status script). */
 .tcg-status.is-ok .tcg-status-ic { background: var(--tcg-success-dim); color: var(--tcg-success); }
 .tcg-status.is-degraded .tcg-status-ic { background: var(--tcg-warn-dim); color: var(--tcg-warn); }
 .tcg-status.is-down .tcg-status-ic { background: color-mix(in oklch, var(--tcg-danger) 16%, transparent); color: var(--tcg-danger); }
-.tcg-status.is-maint .tcg-status-ic { background: var(--tcg-accent-dim); color: var(--tcg-accent); }
+.tcg-status.is-maintenance .tcg-status-ic { background: var(--tcg-accent-dim); color: var(--tcg-accent); }
