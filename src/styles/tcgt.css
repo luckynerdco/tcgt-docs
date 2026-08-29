@@ -563,3 +563,9 @@ starlight-theme-select select,
 .tcg-status p { margin: .15rem 0 0; font-size: .88rem; color: var(--sl-color-gray-2); }
 .tcg-status-btn { white-space: nowrap; font-weight: 600; font-size: .88rem; color: var(--tcg-teal); }
 @media (max-width: 34rem) { .tcg-status { flex-wrap: wrap; } }
+
+/* Live status states (set by the /api/status fetch script on the homepage). */
+.tcg-status.is-ok .tcg-status-ic { background: var(--tcg-success-dim); color: var(--tcg-success); }
+.tcg-status.is-degraded .tcg-status-ic { background: var(--tcg-warn-dim); color: var(--tcg-warn); }
+.tcg-status.is-down .tcg-status-ic { background: color-mix(in oklch, var(--tcg-danger) 16%, transparent); color: var(--tcg-danger); }
+.tcg-status.is-maint .tcg-status-ic { background: var(--tcg-accent-dim); color: var(--tcg-accent); }

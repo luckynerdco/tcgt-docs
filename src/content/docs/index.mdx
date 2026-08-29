@@ -4,6 +4,26 @@ description: A community-run help site for TCGTracking sellers — written by us
 head:
   - tag: style
     content: '.content-panel:has(> .sl-container > #_top){display:none;} mobile-starlight-toc{display:none!important;} .right-sidebar-container{display:none;} @media (min-width:50rem){ [data-has-sidebar] .sidebar-pane{display:none;} .main-frame{padding-inline-start:0;} .main-pane{max-width:none;} }'
+  - tag: script
+    content: |
+      document.addEventListener('DOMContentLoaded', function () {
+        var card = document.getElementById('tcg-status-card');
+        var text = document.getElementById('tcg-status-text');
+        if (!card) return;
+        fetch('/api/status', { headers: { accept: 'application/json' } })
+          .then(function (r) { if (!r.ok) throw 0; return r.json(); })
+          .then(function (d) {
+            var st = (d.overall && d.overall.state) || 'unknown';
+            var cls = st === 'ok' ? 'is-ok' : st === 'degraded' ? 'is-degraded' : st === 'down' ? 'is-down' : st === 'maintenance' ? 'is-maint' : '';
+            if (cls) card.classList.add(cls);
+            var svc = d.services || [];
+            var up = svc.filter(function (s) { return s.state === 'ok'; }).length;
+            var label = (d.overall && d.overall.label) || 'Status';
+            if (svc.length) label += ' · ' + up + '/' + svc.length + ' services operational';
+            if (text) text.textContent = label;
+          })
+          .catch(function () { /* leave the static fallback text as-is */ });
+      });
 ---
 
 <div class="tcg-home not-content">
@@ -57,13 +77,13 @@ head:
   </a>
 </div>
 
-<a class="tcg-status" href="https://status.tcgtracking.com/" target="_blank" rel="noopener noreferrer">
+<a class="tcg-status" id="tcg-status-card" href="https://status.tcgtracking.com/" target="_blank" rel="noopener noreferrer">
   <span class="tcg-status-ic">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l2 5 4-12 2 7h6"/></svg>
   </span>
   <div>
     <h4>TCGTracking platform status</h4>
-    <p>Site or tracking acting up? Check TCGTracking's live uptime and any active incidents.</p>
+    <p id="tcg-status-text">Site or tracking acting up? Check TCGTracking's live uptime and any active incidents.</p>
   </div>
   <div class="cc-spacer"></div>
   <span class="tcg-status-btn">View status ↗</span>
@@ -80,5 +100,4 @@ head:
   <div class="cc-spacer"></div>
   <a class="tcg-cta" href="https://discord.com/invite/CcZAuw22Q9">Join the Discord</a>
 </div>
-
 </div>
