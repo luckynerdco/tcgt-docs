@@ -88,6 +88,7 @@ export default defineConfig({
         {
           label: 'Utilities & More',
           items: [
+            { label: 'Links & Resources', slug: 'utilities/links-and-resources' },
             { label: 'Audits', slug: 'utilities/audits' },
             { label: 'Purchasing Opportunities', slug: 'utilities/purchasing-opportunities' },
             { label: 'TCGTracking Utilities', slug: 'utilities/tcgtracking-utilities' },

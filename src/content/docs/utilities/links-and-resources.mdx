@@ -1,51 +1,36 @@
 ---
-
-title: Links & Resources
+title: Resources
 description: Useful TCGTracking links for checking USPS activity, system status, marketplace queues, and accessing the alternate site.
---------------------------------------------------------------------------------------------------------------------------------------
+---
 
-# Links & Resources
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
 
 This page contains useful TCGTracking tools and resources that can help you check USPS activity, monitor TCGTracking services, and view marketplace processing activity.
 
-## USPS Flow
-
-https://tcgtracking.com/uspsflow.php
-
-USPS Flow provides a visual look at how mail moves through the USPS network.
-
-It can be useful for viewing USPS processing activity and understanding how mail travels through different parts of the network.
-
-## TCGTracking Status
-
-https://status.tcgtracking.com/
-
-The TCGTracking Status page shows the current status of TCGTracking services.
-
-If something appears to be unavailable or not working correctly, check this page for active incidents, service interruptions, and recent status updates.
-
-## USPS Scan Rate Heatmap
-
-https://tcgtracking.com/heatmap.php
-
-The USPS Scan Rate Heatmap shows scan performance across different locations.
-
-This can help identify areas where USPS first scans are performing well and areas where scan rates may be lower.
-
-## TCGTracking Alternate Site
-
-https://tcgtracking.app/
-
-The TCGTracking alternate site can be used if the main TCGTracking website is unavailable.
-
-If you are unable to access the main site, try the alternate site before assuming that TCGTracking is completely down.
-
-## Global Marketplace Queues
-
-https://tcgtracking.com/dashboard.php?tab=global-queues
-
-The Global Marketplace Queues page shows live marketplace API activity.
-
-You can use it to monitor marketplace API requests, requests currently being processed, and completed requests.
-
-This can be useful when waiting for marketplace actions to complete or when checking whether marketplace requests are actively being processed.
+<CardGrid>
+  <LinkCard
+    title="USPS Flow"
+    href="https://tcgtracking.com/uspsflow.php"
+    description="USPS Flow provides a visual look at how mail moves through the USPS network.</br> It can be useful for viewing USPS processing activity and understanding how mail travels through different parts of the network."
+  />
+  <LinkCard
+    title="Platform Status"
+    href="https://status.tcgtracking.com/"
+    description="The TCGTracking Status page shows the current status of TCGTracking services. </br> If something appears to be unavailable or not working correctly, check this page for active incidents, service interruptions, and recent status updates."
+  />
+  <LinkCard
+    title="USPS Scan Rate Heatmap"
+    href="https://tcgtracking.com/heatmap.php"
+    description="The USPS Scan Rate Heatmap shows scan performance across different locations. </br> This can help identify areas where USPS first scans are performing well and areas where scan rates may be lower."
+  />
+  <LinkCard
+    title="TCGTracking Alternate Site"
+    href="https://tcgtracking.app/"
+    description="The TCGTracking alternate site can be used if the main TCGTracking website is unavailable. </br> If you are unable to access the main site, try the alternate site before assuming that TCGTracking is completely down."
+  />
+  <LinkCard
+    title="Global Marketplace Queues"
+    href="https://tcgtracking.com/dashboard.php?tab=global-queues"
+    description="The Global Marketplace Queues page shows live marketplace API activity. </br> You can use it to monitor marketplace API requests, requests currently being processed, and completed requests. </br> This can be useful when waiting for marketplace actions to complete or when checking whether marketplace requests are actively being processed."
+  />
+</CardGrid>
