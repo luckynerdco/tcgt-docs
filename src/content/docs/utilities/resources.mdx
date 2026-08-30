@@ -1,0 +1,37 @@
+---
+title: Resources
+description: Handy TCGTracking tools, dashboards, and links, all in one place.
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+
+A quick index of useful TCGTracking tools and dashboards. These all link out to
+TCGTracking's own site.
+
+<CardGrid>
+  <LinkCard
+    title="USPS Flow"
+    href="https://tcgtracking.com/uspsflow.php"
+    description="See how mail is moving through the USPS network."
+  />
+  <LinkCard
+    title="Platform Status"
+    href="https://status.tcgtracking.com/"
+    description="Live uptime and incident history for TCGTracking's services."
+  />
+  <LinkCard
+    title="Heatmap"
+    href="https://tcgtracking.com/heatmap.php"
+    description="Visualize shipment activity on a map."
+  />
+  <LinkCard
+    title="TCGTracking App"
+    href="https://tcgtracking.app/"
+    description="The TCGTracking app."
+  />
+  <LinkCard
+    title="Global Queues"
+    href="https://tcgtracking.com/dashboard.php?tab=global-queues"
+    description="Monitor TCGTracking's global processing queues."
+  />
+</CardGrid>
