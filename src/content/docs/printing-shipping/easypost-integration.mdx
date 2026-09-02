@@ -1,10 +1,95 @@
 ---
 title: EasyPost Integration
-description: Community guide for TCGTracking users — EasyPost Integration.
+description: Connect EasyPost to purchase postage and print carrier labels through TCGTracking.
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import { Steps, Aside, Card, CardGrid } from '@astrojs/starlight/components';
 
-<Aside type="note" title="Coming soon">
-This guide hasn't been written yet. It's on the list — check back soon, or help write it: join the [Discord](https://discord.com/invite/CcZAuw22Q9) and message **Chris | Lucky Nerd | 2600**.
+Connect EasyPost to purchase postage, print carrier labels, and streamline your order
+fulfillment.
+
+## Overview
+
+EasyPost is a shipping API that powers TCGTracking's label purchasing and e-postage
+features. Once connected, you can buy USPS e-stamps and Ground Advantage carrier
+labels without ever leaving your TCGTracking dashboard.
+
+<Aside type="tip">
+This integration is only required if you want to **purchase postage** through
+TCGTracking. Free USPS Informed Visibility tracking works without EasyPost.
+</Aside>
+
+## 1. Create your EasyPost account
+
+If you don't already have an EasyPost account, create one for free at
+[easypost.com](https://www.easypost.com/). After signing up, you may need to contact
+EasyPost Support to activate your account before it can be used.
+
+*(Screenshot: the EasyPost sign-up page.)*
+
+## 2. Generate your API key
+
+Once your account is active, go to **Account Settings → API Keys** and find your
+**Production API key** — [EasyPost API Keys](https://app.easypost.com/account/settings?tab=api-keys).
+
+*(Screenshot: copying your Production API key.)*
+
+<Aside type="caution">
+Use your **Production** key, not the Test key, for live orders. If you don't see the
+API Keys section at all, your account is still on hold — contact EasyPost Support to
+activate it.
+</Aside>
+
+## 3. Fund your EasyPost account
+
+Before you can purchase labels, add funds to your EasyPost wallet — pick a payment
+method and funding frequency at
+[EasyPost Wallet](https://app.easypost.com/account/settings/wallet).
+
+<CardGrid>
+  <Card title="ACH (bank transfer)">No extra fees. Recommended.</Card>
+  <Card title="Debit card">Available, but carries a 3.75% processing fee.</Card>
+</CardGrid>
+
+<Aside type="caution">
+If **One Time Funding** shows an error, email EasyPost Support to request access — it
+may need to be enabled on your account.
+</Aside>
+
+## 4. Connect EasyPost to TCGTracking
+
+Head to your TCGTracking dashboard and open the
+[Integrations settings](https://tcgtracking.com/dashboard.php?tab=integrations).
+
+<Steps>
+
+1. **Find EasyPost in the Available Integrations list** and click the settings icon next to it.
+
+2. **Paste your Production API key** into the first field in the Configure EasyPost Integration dialog.
+
+3. **Paste your Test API key** into the second field.
+
+4. **Click Update.** Once connected, the status shows as **Active** in Production mode.
+
+</Steps>
+
+## Troubleshooting
+
+<Aside type="danger" title="API key not working">
+Double-check that you copied the full Production API key with no extra spaces, and that
+you're not using the Test key.
+</Aside>
+
+<Aside type="danger" title="API Keys section not visible in EasyPost">
+Your account is on hold. Contact EasyPost Support to activate it before continuing.
+</Aside>
+
+<Aside type="danger" title="Error when using one-time funding">
+One-time funding requires manual activation by EasyPost. Email their support team to
+request access.
+</Aside>
+
+<Aside type="danger" title="Labels not generating after connecting">
+Make sure your EasyPost wallet has sufficient funds and your shipping details are fully
+set up.
 </Aside>
