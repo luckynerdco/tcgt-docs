@@ -586,3 +586,26 @@ starlight-theme-select select,
 .tcg-status.is-degraded .tcg-status-ic { background: var(--tcg-warn-dim); color: var(--tcg-warn); }
 .tcg-status.is-down .tcg-status-ic { background: color-mix(in oklch, var(--tcg-danger) 16%, transparent); color: var(--tcg-danger); }
 .tcg-status.is-maintenance .tcg-status-ic { background: var(--tcg-accent-dim); color: var(--tcg-accent); }
+
+/* Recent updates list (manually curated on the homepage). */
+.tcg-updates { list-style: none; margin: .5rem 0 0; padding: 0; }
+.tcg-update {
+  display: flex; gap: 1.1rem; padding: .85rem 0;
+  border-bottom: 1px solid var(--tcg-border-soft);
+}
+.tcg-update:last-child { border-bottom: 0; }
+.tcg-update-date {
+  flex: none; width: 6.5rem; padding-top: .1rem;
+  font-size: .8rem; color: var(--sl-color-gray-3);
+  font-variant-numeric: tabular-nums;
+}
+.tcg-update b {
+  font-family: var(--tcg-display); font-weight: 600; font-size: .95rem;
+  display: block; letter-spacing: -0.01em;
+}
+.tcg-update > div span { font-size: .88rem; color: var(--sl-color-gray-2); line-height: 1.5; }
+.tcg-updates-note { margin-top: 1rem; font-size: .82rem; color: var(--sl-color-gray-4); }
+@media (max-width: 34rem) {
+  .tcg-update { flex-direction: column; gap: .2rem; }
+  .tcg-update-date { width: auto; }
+}
