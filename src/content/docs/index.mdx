@@ -107,23 +107,39 @@ head:
 */}
  
 <ul class="tcg-updates">
+   <li class="tcg-update">
+    <span class="tcg-update-date">Sep 04, 2026</span>
+    <div>
+    <ul>
+      <li><b>Recent Updates & Fixes under final testing</b></li>
+        <ul>
+          <li>Corrected a bug for session rollovers that occurred in chunks of 25 cards to avoid breaking browser storage limits (/scan endpoint) - generally higher scan volumes</li>
+          <li>Fixed eBay ESE eligibility based on <=$20 single and <=$50 total</li>
+          <li>Corrected eBay non-ESE rates for eBay orders (if you have re-auth'd eBay integration in the last few weeks this will automatically show in Orders v2)</li>
+          <li>Backend: Corrected ACH status updates for postage</li>
+          <li>Store fronts: Improved store home page loading logic/cache, significant speed improvement for TTL on 1st visits</li>
+          <li>Assisted Stock: A fix is being tested when identical SKUs are stocked to the same location in the same session, but they were not in consecutive order, causing the order to collapse and join w/the 1st SKU</li>
+          <li>Shopify loop fix: When 2 items within the same parent group had a revise & create within the same sync this caused a loop that never stopped as the unique key for shopify is written by the parent set identifier, this is fixed by joining when allowed or stalling the 2nd set post-update</li>
+          <li>Shopify: I am manually reviewing accounts that appear to see price drift from their intention and a possible issue with my $ lock</li>
+        </ul>
+    </ul>
   <li class="tcg-update">
     <span class="tcg-update-date">Aug 31, 2026</span>
     <div>
     <ul>
-      <li><b>eBay Errors/Queued Updates</b></li>
-      <li><b>OpenAPI Updates</b></li>
-      <li><b>Manapool Linking</b></li>
-      <li><b>Manapool Token Mapping (on a few Tokens)</b></li>
-      <li><b>USPS Updates</b></li>
-      <li><b>Custom Listings</b></li>
-      <li><b>Flow App Updates</b></li>
-      <li><b>Location Renaming</b></li>
-      <li><b>TCGPlayer Direct</b></li>
-      <li><b>TCGPlayer Direct Assisted Pick Updates</b></li>
-      <li><b> CTO Assisted Pick</b></li>
-      <li><b> USPS Routing Structure Displayed</b></li>
-      <li><b>TCGPlayer Direct RI New Pick Flows</b></li>
+      <li>eBay Errors/Queued Updates</li>
+      <li>OpenAPI Updates</li>
+      <li>Manapool Linking</b></li>
+      <li>Manapool Token Mapping (on a few Tokens)</li>
+      <li>USPS Updates</li>
+      <li>Custom Listings</li>
+      <li>Flow App Updates</li>
+      <li>Location Renaming</li>
+      <li>TCGPlayer Direct</li>
+      <li>TCGPlayer Direct Assisted Pick Updates</li>
+      <li>CTO Assisted Pick</li>
+      <li>USPS Routing Structure Displayed</li>
+      <li>TCGPlayer Direct RI New Pick Flows</li>
     </ul>
     </div>
   </li>
