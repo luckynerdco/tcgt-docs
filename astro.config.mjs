@@ -86,16 +86,15 @@ export default defineConfig({
           ],
         },
         {
-{
-  label: 'Supplies',
-  items: [
-    { label: 'Overview', slug: 'supplies/overview' },
-    { label: 'Card Protection', slug: 'supplies/card-protection' },
-    { label: 'Envelopes, Mailers & Boxes', slug: 'supplies/mailers-and-boxes' },
-    { label: 'Packing & Protection', slug: 'supplies/packing-protection' },
-    { label: 'Printing & Labels', slug: 'supplies/printing-labels' },
-  ],
-},
+          label: 'Supplies',
+          items: [
+            { label: 'Overview', slug: 'supplies/overview' },
+            { label: 'Card Protection', slug: 'supplies/card-protection' },
+            { label: 'Envelopes, Mailers & Boxes', slug: 'supplies/mailers-and-boxes' },
+            { label: 'Packing & Protection', slug: 'supplies/packing-protection' },
+            { label: 'Printing & Labels', slug: 'supplies/printing-labels' },
+          ],
+        },
         {
           label: 'Utilities & More',
           items: [
