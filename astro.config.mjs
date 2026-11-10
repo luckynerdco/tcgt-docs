@@ -86,6 +86,12 @@ export default defineConfig({
           ],
         },
         {
+  label: 'Supplies',
+  items: [
+    { label: 'Overview', slug: 'supplies/overview' },
+  ],
+},
+        {
           label: 'Utilities & More',
           items: [
             { label: 'Links & Resources', slug: 'utilities/links-and-resources' },
